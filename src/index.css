@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+    --color-brand--0: #72d1d4;
+    --color-brand--1: #6dc7ca;
+
+    --color-light--0: #f0f0f0;
+    --color-light--1: #cac8c8;
+    --color-light--2: #b9b9b9;
+
+    --color-dark--0: #434343;
+}
+
+body {
+    font-family: "Source Sans 3", sans-serif;
+    color: #434343;
+    background-color: var(--color-light--1);
+}
