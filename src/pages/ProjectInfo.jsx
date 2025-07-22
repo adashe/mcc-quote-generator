@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
+
 import BackButton from "../components/BackButton";
+import Button from "../components/Button";
 import PageNarrow from "../components/PageNarrow";
+
 import { useSmcc } from "../contexts/SmccContext";
 
-function FormProjectInfo() {
+function ProjectInfo() {
     const { projectInfo, handleChangeProjectInfo } = useSmcc();
 
     return (
@@ -63,9 +67,12 @@ function FormProjectInfo() {
                     </label>
                 </div>
             </form>
+            <Link to="/summary">
+                <Button>Submit</Button>
+            </Link>
             <BackButton />
         </PageNarrow>
     );
 }
 
-export default FormProjectInfo;
+export default ProjectInfo;

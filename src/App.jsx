@@ -9,7 +9,9 @@ import SmccOptions from "./pages/SmccOptions";
 import FormEZMCC from "./pages/FormEZMCC";
 import Form208VMCC from "./pages/Form208VMCC";
 import Form460VMCC from "./pages/Form460VMCC";
-import FormProjectInfo from "./pages/FormProjectInfo";
+
+import ProjectInfo from "./pages/ProjectInfo";
+import SummaryKits from "./pages/Summary/KitSummary";
 
 function App() {
     return (
@@ -25,10 +27,8 @@ function App() {
                         <Route path="v208" element={<Form208VMCC />} />
                         <Route path="v460" element={<Form460VMCC />} />
                         <Route path="ezmcc" element={<FormEZMCC />} />
-                        <Route
-                            path="projectInfo"
-                            element={<FormProjectInfo />}
-                        />
+                        <Route path="projectInfo" element={<ProjectInfo />} />
+                        <Route path="summary" element={<SummaryKits />} />
                     </Routes>
                 </BrowserRouter>
             </SmccProvider>

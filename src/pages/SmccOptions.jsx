@@ -6,7 +6,7 @@ import PageNarrow from "../components/PageNarrow";
 
 import { useSmcc } from "../contexts/SmccContext";
 
-function FormSMCCOptions() {
+function SmccOptions() {
     const { options, handleChangeOptions } = useSmcc();
 
     return (
@@ -17,10 +17,10 @@ function FormSMCCOptions() {
                         Size:
                         <select
                             name="size"
-                            value={options.size}
+                            value={options.size || "..."}
                             onChange={handleChangeOptions}
                         >
-                            <option selected="true" disabled="disabled">
+                            <option disabled="disabled" value="...">
                                 ...
                             </option>
                             <option value="small">Small</option>
@@ -36,10 +36,10 @@ function FormSMCCOptions() {
                         STC:
                         <select
                             name="stc"
-                            value={options?.stc}
+                            value={options.stc || "..."}
                             onChange={handleChangeOptions}
                         >
-                            <option selected="true" disabled="disabled">
+                            <option disabled="disabled" value="...">
                                 ...
                             </option>
                             <option value="32">32</option>
@@ -61,4 +61,4 @@ function FormSMCCOptions() {
     );
 }
 
-export default FormSMCCOptions;
+export default SmccOptions;
