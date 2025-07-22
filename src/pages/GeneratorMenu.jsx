@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 import Button from "../components/Button";
-import StandardPage from "../components/StandardPage";
+import PageNarrow from "../components/PageNarrow";
 
 function GeneratorMenu() {
     return (
-        <StandardPage>
+        <PageNarrow>
             <Link to="/smcc">
                 <Button>SMCC</Button>
             </Link>
@@ -21,11 +21,7 @@ function GeneratorMenu() {
             <Link to="/v460">
                 <Button>460V MCC</Button>
             </Link>
-
-            <Link to="/projectInfo">
-                <Button>Project Info</Button>
-            </Link>
-        </StandardPage>
+        </PageNarrow>
     );
 }
 

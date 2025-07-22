@@ -1,12 +1,12 @@
 import BackButton from "../components/BackButton";
-import StandardPage from "../components/StandardPage";
+import PageNarrow from "../components/PageNarrow";
 
 function FormEZMCC() {
     return (
-        <StandardPage>
+        <PageNarrow>
             <h1>Form EZMCC</h1>
             <BackButton />
-        </StandardPage>
+        </PageNarrow>
     );
 }
 

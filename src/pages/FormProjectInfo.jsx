@@ -1,9 +1,9 @@
 import BackButton from "../components/BackButton";
-import StandardPage from "../components/StandardPage";
+import PageNarrow from "../components/PageNarrow";
 
 function FormProjectInfo() {
     return (
-        <StandardPage>
+        <PageNarrow>
             <form>
                 <div>
                     <label>
@@ -41,7 +41,7 @@ function FormProjectInfo() {
                 </div>
             </form>
             <BackButton />
-        </StandardPage>
+        </PageNarrow>
     );
 }
 

@@ -1,12 +1,12 @@
 import BackButton from "../components/BackButton";
-import StandardPage from "../components/StandardPage";
+import PageNarrow from "../components/PageNarrow";
 
 function Form208VMCC() {
     return (
-        <StandardPage>
+        <PageNarrow>
             <h1>Form 208V MCC</h1>
             <BackButton />
-        </StandardPage>
+        </PageNarrow>
     );
 }
 
