@@ -1,0 +1,175 @@
+[
+    {
+        "id": "starter3hp",
+        "description": "1, 2, and 3HP Starter/MSP",
+        "components": [
+            "3RV2711-1JD10",
+            "TPRST009",
+            "2006-1201",
+            "2006-1201",
+            "2006-1201",
+            "2006-1207",
+            "2006-1292"
+        ],
+        "price": 1,
+        "fla": null
+    },
+    {
+        "id": "starter5hp",
+        "description": "5HP Starter/MSP",
+        "components": [
+            "3RV2721-4CD10",
+            "TPRST025",
+            "2006-1201",
+            "2006-1201",
+            "2006-1201",
+            "2006-1207",
+            "2006-1292"
+        ],
+        "price": 1,
+        "fla": null
+    },
+    {
+        "id": "starter7hp",
+        "description": "7.5HP Starter/MSP",
+        "components": [
+            "3RV2721-4CD10",
+            "TPRST025",
+            "2006-1201",
+            "2006-1201",
+            "2006-1201",
+            "2006-1207",
+            "2006-1292"
+        ],
+        "price": 1,
+        "fla": null
+    },
+    {
+        "id": "starter10hp",
+        "description": "10HP Starter/MSP",
+        "components": [
+            "3RV2721-4CD10",
+            "TPRST025",
+            "2010-1201",
+            "2010-1201",
+            "2010-1201",
+            "2010-1207",
+            "2010-1292"
+        ],
+        "price": 1,
+        "fla": null
+    },
+    {
+        "id": "starter15hp",
+        "description": "15HP Starter/MSP",
+        "components": [
+            "3RV2742-5FD10",
+            "TPRST038",
+            "2010-1201",
+            "2010-1201",
+            "2010-1201",
+            "2010-1207",
+            "2010-1292"
+        ],
+        "price": 1,
+        "fla": null
+    },
+    {
+        "id": "starter25hp",
+        "description": "20 and 25HP Starter/MSP",
+        "components": [
+            "3RV2742-5LD10",
+            "TPRST065",
+            "2016-1201",
+            "2016-1201",
+            "2016-1201",
+            "2016-1207",
+            "2016-1292"
+        ],
+        "price": 1,
+        "fla": null
+    },
+    {
+        "id": "starter30hp",
+        "description": "20 and 25HP Starter/MSP",
+        "components": [
+            "3RV2742-5LD10",
+            "TPRST065",
+            "2016-1201",
+            "2016-1201",
+            "2016-1201",
+            "2016-1207",
+            "2016-1292"
+        ],
+        "price": 1,
+        "fla": null
+    },
+    {
+        "id": "vfd1hp",
+        "description": "1 and 1.5HP VFD/MSP",
+        "components": [
+            "ATV320U15N4B",
+            "VW3A3616",
+            "RLW-04P803",
+            "GV2P10",
+            "2006-1201",
+            "2006-1201",
+            "2006-1201",
+            "2006-1207",
+            "2006-1292",
+            "GBPO1001-15-BLUB"
+        ],
+        "price": 1,
+        "fla": null
+    },
+    {
+        "id": "vfd3hp",
+        "description": "2 and 3HP VFD/MSP",
+        "components": [
+            "ATV320U22N4B",
+            "VW3A3616",
+            "RLW-04P803",
+            "GV2P14",
+            "2006-1201",
+            "2006-1201",
+            "2006-1201",
+            "2006-1207",
+            "2006-1292"
+        ],
+        "price": 1,
+        "fla": null
+    },
+
+    {
+        "id": "vfd15hp",
+        "description": "15HP VFD/MSP",
+        "components": [
+            "ATV320D11N4B",
+            "VW3A3616",
+            "GV3P40",
+            "2010-1201",
+            "2010-1201",
+            "2010-1201",
+            "2010-1207",
+            "2010-1292"
+        ],
+        "price": 1,
+        "fla": null
+    },
+    {
+        "id": "vfd20hp",
+        "description": "20HP VFD/MSP",
+        "components": [
+            "ATV320D15N4B",
+            "VW3A3616",
+            "GV3P40",
+            "2016-1201",
+            "2016-1201",
+            "2016-1201",
+            "2016-1207",
+            "2016-1292"
+        ],
+        "price": 1,
+        "fla": null
+    }
+]

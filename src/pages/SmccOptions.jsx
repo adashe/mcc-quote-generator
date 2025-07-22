@@ -1,0 +1,45 @@
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
+import BackButton from "../components/BackButton";
+import PageNarrow from "../components/PageNarrow";
+
+function FormSMCCOptions() {
+    return (
+        <PageNarrow>
+            <form>
+                <div>
+                    <label>
+                        Size:
+                        <select name="size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                            <option value="xlarge">Extra Large</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        STC:
+                        <select name="stc">
+                            <option value="32">32</option>
+                            <option value="48">48</option>
+                            <option value="64">64</option>
+                            <option value="80">80</option>
+                            <option value="96">96</option>
+                            <option value="112">112</option>
+                            <option value="128">128</option>
+                        </select>
+                    </label>
+                </div>
+            </form>
+            <Link to="/projectInfo">
+                <Button>Project Info</Button>
+            </Link>
+            <BackButton />
+        </PageNarrow>
+    );
+}
+
+export default FormSMCCOptions;
