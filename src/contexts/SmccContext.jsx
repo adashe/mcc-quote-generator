@@ -1,15 +1,18 @@
 import { createContext, useState, useContext } from "react";
 
-const SmccContext = createContext();
-
 import kitsData from "../data/smccKits";
 import partsData from "../data/smccParts";
+
+const SmccContext = createContext();
 
 // Build initial assembly object based on kits in kitsData
 const initialAssembly = kitsData.reduce((prev, curr) => {
     prev[curr.id] = 0;
     return prev;
 }, {});
+
+const initialOptions = {};
+const initialProjectInfo = {};
 
 // Calculate the price of each individual kit, for use in total price calculation and kits view
 function calcKitPrice(kitID) {
@@ -28,6 +31,8 @@ function calcKitPrice(kitID) {
 
 function SmccProvider({ children }) {
     const [assembly, setAssembly] = useState(initialAssembly);
+    const [options, setOptions] = useState(initialOptions);
+    const [projectInfo, setProjectInfo] = useState(initialProjectInfo);
 
     function handleChangeAssembly(e) {
         const { name, value } = e.target;
@@ -38,9 +43,37 @@ function SmccProvider({ children }) {
         }));
     }
 
+    function handleChangeOptions(e) {
+        const { name, value } = e.target;
+
+        setOptions((previous) => ({
+            ...previous,
+            [name]: value,
+        }));
+    }
+
+    function handleChangeProjectInfo(e) {
+        const { name, value } = e.target;
+
+        setProjectInfo((previous) => ({
+            ...previous,
+            [name]: value,
+        }));
+    }
+
     return (
         <SmccContext.Provider
-            value={{ assembly, handleChangeAssembly, calcKitPrice }}
+            value={{
+                kitsData,
+                partsData,
+                assembly,
+                options,
+                projectInfo,
+                handleChangeAssembly,
+                handleChangeOptions,
+                handleChangeProjectInfo,
+                calcKitPrice,
+            }}
         >
             {children}
         </SmccContext.Provider>
@@ -54,4 +87,5 @@ function useSmcc() {
     return context;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { SmccProvider, useSmcc };

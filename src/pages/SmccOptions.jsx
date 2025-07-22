@@ -1,16 +1,28 @@
 import { Link } from "react-router-dom";
+
 import Button from "../components/Button";
 import BackButton from "../components/BackButton";
 import PageNarrow from "../components/PageNarrow";
 
+import { useSmcc } from "../contexts/SmccContext";
+
 function FormSMCCOptions() {
+    const { options, handleChangeOptions } = useSmcc();
+
     return (
         <PageNarrow>
             <form>
                 <div>
                     <label>
                         Size:
-                        <select name="size">
+                        <select
+                            name="size"
+                            value={options.size}
+                            onChange={handleChangeOptions}
+                        >
+                            <option selected="true" disabled="disabled">
+                                ...
+                            </option>
                             <option value="small">Small</option>
                             <option value="medium">Medium</option>
                             <option value="large">Large</option>
@@ -22,7 +34,14 @@ function FormSMCCOptions() {
                 <div>
                     <label>
                         STC:
-                        <select name="stc">
+                        <select
+                            name="stc"
+                            value={options?.stc}
+                            onChange={handleChangeOptions}
+                        >
+                            <option selected="true" disabled="disabled">
+                                ...
+                            </option>
                             <option value="32">32</option>
                             <option value="48">48</option>
                             <option value="64">64</option>

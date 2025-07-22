@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import GeneratorMenu from "./pages/GeneratorMenu";
 
+import { SmccProvider } from "./contexts/SmccContext";
 import SmccAssembly from "./pages/SmccAssembly";
 import SmccOptions from "./pages/SmccOptions";
 
@@ -13,17 +14,24 @@ import FormProjectInfo from "./pages/FormProjectInfo";
 function App() {
     return (
         <>
-            <BrowserRouter>
-                <Routes>
-                    <Route index element={<GeneratorMenu />} />
-                    <Route path="smcc" element={<SmccAssembly />} />
-                    <Route path="smcc/options" element={<SmccOptions />} />
-                    <Route path="v208" element={<Form208VMCC />} />
-                    <Route path="v460" element={<Form460VMCC />} />
-                    <Route path="ezmcc" element={<FormEZMCC />} />
-                    <Route path="projectInfo" element={<FormProjectInfo />} />
-                </Routes>
-            </BrowserRouter>
+            <SmccProvider>
+                <BrowserRouter>
+                    <Routes>
+                        <Route index element={<GeneratorMenu />} />
+
+                        <Route path="smcc" element={<SmccAssembly />} />
+                        <Route path="smcc/options" element={<SmccOptions />} />
+
+                        <Route path="v208" element={<Form208VMCC />} />
+                        <Route path="v460" element={<Form460VMCC />} />
+                        <Route path="ezmcc" element={<FormEZMCC />} />
+                        <Route
+                            path="projectInfo"
+                            element={<FormProjectInfo />}
+                        />
+                    </Routes>
+                </BrowserRouter>
+            </SmccProvider>
         </>
     );
 }
