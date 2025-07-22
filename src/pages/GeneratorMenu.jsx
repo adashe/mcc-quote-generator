@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 
-import styles from "./GeneratorMenu.module.css";
 import Button from "../components/Button";
-import { Header } from "../components/Header";
+import StandardPage from "../components/StandardPage";
 
 function GeneratorMenu() {
     return (
-        <div className={styles.page}>
-            <Header>Quote Generator</Header>
-
+        <StandardPage>
             <Link to="/smcc">
                 <Button>SMCC</Button>
+            </Link>
+
+            <Link to="/ezmcc">
+                <Button>EZMCC</Button>
             </Link>
 
             <Link to="/v208">
@@ -21,10 +22,10 @@ function GeneratorMenu() {
                 <Button>460V MCC</Button>
             </Link>
 
-            <Link to="/ezmcc">
-                <Button>EZMCC</Button>
+            <Link to="/projectInfo">
+                <Button>Project Info</Button>
             </Link>
-        </div>
+        </StandardPage>
     );
 }
 

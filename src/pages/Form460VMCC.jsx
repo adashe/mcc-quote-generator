@@ -1,11 +1,12 @@
 import BackButton from "../components/BackButton";
+import StandardPage from "../components/StandardPage";
 
 function Form460VMCC() {
     return (
-        <div>
+        <StandardPage>
             <h1>Form 460V MCC</h1>
             <BackButton />
-        </div>
+        </StandardPage>
     );
 }
 

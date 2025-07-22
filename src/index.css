@@ -16,3 +16,25 @@ body {
     color: #434343;
     background-color: var(--color-light--1);
 }
+form {
+    text-align: right;
+    margin: auto;
+}
+input {
+    display: inline-block;
+    font-family: "Source Sans 3", serif;
+    width: 140px;
+    margin: 10px;
+    padding: 10px;
+    color: #434343;
+    font-size: 16px;
+}
+select {
+    display: inline-block;
+    font-family: "Source Sans 3", serif;
+    width: 164px;
+    margin: 10px;
+    padding: 10px;
+    color: #434343;
+    font-size: 16px;
+}

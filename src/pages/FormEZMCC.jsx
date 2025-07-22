@@ -1,11 +1,12 @@
 import BackButton from "../components/BackButton";
+import StandardPage from "../components/StandardPage";
 
 function FormEZMCC() {
     return (
-        <div>
+        <StandardPage>
             <h1>Form EZMCC</h1>
             <BackButton />
-        </div>
+        </StandardPage>
     );
 }
 
