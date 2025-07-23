@@ -67,7 +67,7 @@ function ProjectInfo() {
                     </label>
                 </div>
             </form>
-            <Link to="/summary">
+            <Link to="/kitSummary">
                 <Button>Submit</Button>
             </Link>
             <BackButton />

@@ -1,4 +1,5 @@
 import { useSmcc } from "../../contexts/SmccContext";
+import styles from "./KitSummaryPartsListItem.module.css";
 
 import KitSummaryPartsListItem from "./KitSummaryPartsListItem";
 
@@ -17,8 +18,21 @@ function KitSummaryPartsList({ components, kitQuantity }) {
 
     return (
         <ul>
+            <li className={styles.listItem}>
+                <div>QTY</div>
+                <div className={styles.partNumCol}>PART NUM</div>
+                <div className={styles.partDescCol}>DESCRIPTION</div>
+                <div>MANU</div>
+                <div>PRICE</div>
+                <div>TOTAL</div>
+            </li>
             {selectedPartsArr.map((component, i) => (
-                <KitSummaryPartsListItem component={component} />
+                <KitSummaryPartsListItem
+                    component={component}
+                    quantity={kitParts[component.id]}
+                    kitQuantity={kitQuantity}
+                    key={i}
+                />
             ))}
         </ul>
     );
