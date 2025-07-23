@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import Button from "../components/Button";
-import BackButton from "../components/BackButton";
+import Button from "../components/buttons/Button.jsx";
+import BackButton from "../components/buttons/BackButton.jsx";
 import PageNarrow from "../components/PageNarrow.jsx";
 
 import { KitsForm } from "../components/KitsForm.jsx";

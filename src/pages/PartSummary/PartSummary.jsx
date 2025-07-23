@@ -1,8 +1,13 @@
-import BackButton from "../../components/BackButton";
+import BackButton from "../../components/buttons/BackButton";
+import { CSVButton } from "../../components/CSVButton";
 import PageWide from "../../components/PageWide";
 import { useSmcc } from "../../contexts/SmccContext";
 import { PartsListRow } from "./PartsListRow";
 import styles from "./PartsListRow.module.css";
+import { Link } from "react-router-dom";
+import Button from "../../components/buttons/Button";
+import TabNavigation from "../../components/TabNavigation";
+import LinkButton from "../../components/buttons/LinkButton";
 
 function PartSummary() {
     const { kitsData, partsData, assembly } = useSmcc();
@@ -27,7 +32,13 @@ function PartSummary() {
 
     return (
         <PageWide>
-            <BackButton />
+            <TabNavigation>
+                <LinkButton route={"/smcc"}>Edit Inputs</LinkButton>
+                <LinkButton route={"/kitSummary"}>Kit Summary</LinkButton>
+                <Button isActive={false}>Part Summary</Button>
+                <CSVButton />
+            </TabNavigation>
+
             <ul>
                 <div className={`${styles.listItem} ${styles.listHeader}`}>
                     <div>QTY</div>

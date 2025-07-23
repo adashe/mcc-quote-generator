@@ -1,4 +1,4 @@
-import BackButton from "../components/BackButton";
+import BackButton from "../components/buttons/BackButton";
 import PageNarrow from "../components/PageNarrow";
 
 function Form460VMCC() {

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import BackButton from "../components/BackButton";
-import Button from "../components/Button";
+import BackButton from "../components/buttons/BackButton";
+import Button from "../components/buttons/Button";
 import PageNarrow from "../components/PageNarrow";
 
 import { useSmcc } from "../contexts/SmccContext";

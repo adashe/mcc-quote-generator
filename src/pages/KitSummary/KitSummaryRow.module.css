@@ -5,7 +5,7 @@
     justify-content: space-between;
     text-transform: uppercase;
     font-weight: 600;
-    padding: 10px;
+    padding: 4px;
     border-bottom: 1px solid var(--color-light--1);
 }
 .kitDesc {
