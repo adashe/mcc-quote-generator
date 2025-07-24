@@ -3,7 +3,7 @@ import styles from "./KitSummaryPartsListItem.module.css";
 function KitSummaryPartsListItem({ component, quantity, kitQuantity }) {
     return (
         <li className={styles.listItem}>
-            <div>{quantity * kitQuantity}</div>
+            <div className={styles.qtyCol}>{quantity * kitQuantity}</div>
             <div className={styles.partNumCol}>
                 {component?.id || component}
             </div>

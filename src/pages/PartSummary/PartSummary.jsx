@@ -38,15 +38,15 @@ function PartSummary() {
                 <Button isActive={false}>Part Summary</Button>
                 <CSVButton />
             </TabNavigation>
-
+            <h2>PART SUMMARY</h2>
             <ul>
                 <div className={`${styles.listItem} ${styles.listHeader}`}>
-                    <div>QTY</div>
-                    <div className={styles.partNumCol}>PART NUM</div>
-                    <div className={styles.partDescCol}>DESCRIPTION</div>
-                    <div>MANU</div>
-                    <div>PRICE</div>
-                    <div>TOTAL</div>
+                    <div className={styles.qtyCol}>Qty</div>
+                    <div className={styles.partNumCol}>Part Num</div>
+                    <div className={styles.partDescCol}>Description</div>
+                    <div>Manu</div>
+                    <div>Price</div>
+                    <div>Total</div>
                 </div>
                 {selectedPartsArr.map((part) => (
                     <PartsListRow

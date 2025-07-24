@@ -1,26 +1,54 @@
 import styles from "./KitSummaryRow.module.css";
 import { useSmcc } from "../../contexts/SmccContext";
 import KitSummaryPartsList from "./KitSummaryPartsList";
+import { useState } from "react";
 
 function KitSummaryRow({ kit }) {
     const { assembly, calcKitPrice } = useSmcc();
+    const [isOpen, setIsOpen] = useState(false);
+
+    function handleOpen() {
+        setIsOpen(!isOpen);
+    }
 
     return (
         <div>
-            <div className={styles.headerRow}>
+            <div className={styles.headerRow} onClick={handleOpen}>
                 <div className={styles.kitDesc}>{kit.description}</div>
-                <div>Qty: {assembly[kit.id]}</div>
-                <div>Kit Price: ${calcKitPrice(kit.id).toFixed(2)}</div>
-                <div>
+                <div className={`${styles.kitCol} ${styles.kitQty}`}>
+                    Qty: {assembly[kit.id]}
+                </div>
+
+                <div className={styles.kitCol}>
+                    Price: ${calcKitPrice(kit.id).toFixed(2)}
+                </div>
+                <div className={styles.kitCol}>
                     Total: $
                     {(calcKitPrice(kit.id) * assembly[kit.id]).toFixed(2)}
                 </div>
+
+                {isOpen ? (
+                    <span className={styles.materialSymbolsOutlined}>
+                        keyboard_arrow_up
+                    </span>
+                ) : (
+                    <span className={styles.materialSymbolsOutlined}>
+                        keyboard_arrow_down
+                    </span>
+                )}
             </div>
+
             <div>
-                <KitSummaryPartsList
-                    components={kit.components}
-                    kitQuantity={assembly[kit.id]}
-                />
+                {isOpen ? (
+                    <div>
+                        <KitSummaryPartsList
+                            components={kit.components}
+                            kitQuantity={assembly[kit.id]}
+                        />
+                    </div>
+                ) : (
+                    ""
+                )}
             </div>
         </div>
     );

@@ -7,11 +7,15 @@
     font-size: 14px;
 }
 .listItem div {
-    width: 80px;
+    width: 100px;
+    overflow: hidden;
+}
+div.qtyCol {
+    width: 40px;
 }
 div.partNumCol {
     width: 140px;
 }
 div.partDescCol {
-    width: 280px;
+    width: 300px;
 }

@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 
 import Button from "../components/buttons/Button.jsx";
-import BackButton from "../components/buttons/BackButton.jsx";
 import PageNarrow from "../components/PageNarrow.jsx";
 
 import { KitsForm } from "../components/KitsForm.jsx";
 import { KitRow } from "../components/KitRow.jsx";
 
 import { useSmcc } from "../contexts/SmccContext.jsx";
+import LinkButton from "../components/buttons/LinkButton.jsx";
+import TabNavigation from "../components/TabNavigation.jsx";
 
 function SmccAssembly() {
     const { kitsData, assembly, handleChangeAssembly, calcKitPrice } =
@@ -15,7 +16,11 @@ function SmccAssembly() {
 
     return (
         <PageNarrow>
-            <h1>SMCC</h1>
+            <TabNavigation>
+                <LinkButton route={"/"}>&larr; Configurators</LinkButton>
+                <LinkButton route={"/smccOptions"}>Options &rarr;</LinkButton>
+            </TabNavigation>
+            <h2>SMCC KITS</h2>
             <KitsForm>
                 {kitsData.map((kit) => (
                     <KitRow
@@ -27,10 +32,6 @@ function SmccAssembly() {
                     />
                 ))}
             </KitsForm>
-            <Link to="/smcc/options">
-                <Button>SMCC Options</Button>
-            </Link>
-            <BackButton />
         </PageNarrow>
     );
 }

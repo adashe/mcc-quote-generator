@@ -23,7 +23,7 @@ function App() {
                         <Route index element={<GeneratorMenu />} />
 
                         <Route path="smcc" element={<SmccAssembly />} />
-                        <Route path="smcc/options" element={<SmccOptions />} />
+                        <Route path="smccOptions" element={<SmccOptions />} />
 
                         <Route path="v208" element={<Form208VMCC />} />
                         <Route path="v460" element={<Form460VMCC />} />

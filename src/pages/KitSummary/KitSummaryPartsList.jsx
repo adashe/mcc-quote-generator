@@ -19,7 +19,7 @@ function KitSummaryPartsList({ components, kitQuantity }) {
     return (
         <ul>
             <li className={styles.listItem}>
-                <div>QTY</div>
+                <div className={styles.qtyCol}>QTY</div>
                 <div className={styles.partNumCol}>PART NUM</div>
                 <div className={styles.partDescCol}>DESCRIPTION</div>
                 <div>MANU</div>

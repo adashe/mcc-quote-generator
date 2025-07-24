@@ -3,7 +3,7 @@ import styles from "./PartsListRow.module.css";
 export function PartsListRow({ part, partsList }) {
     return (
         <li className={styles.listItem}>
-            <div>{partsList[part.id]}</div>
+            <div className={styles.qtyCol}>{partsList[part.id]}</div>
             <div className={styles.partNumCol}>{part.id}</div>
             <div className={styles.partDescCol}>{part.description}</div>
             <div>{part.manufacturer}</div>
