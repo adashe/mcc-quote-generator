@@ -1,10 +1,11 @@
 import { useSmcc } from "../../contexts/SmccContext";
 import Button from "../../components/buttons/Button";
 import LinkButton from "../../components/buttons/LinkButton";
+import { CSVButton } from "../../components/CSVButton";
 
 import PageWide from "../../components/PageWide";
 import KitSummaryRow from "./KitSummaryRow";
-import { CSVButton } from "../../components/CSVButton";
+
 import TabNavigation from "../../components/TabNavigation";
 
 function KitSummary() {
@@ -24,6 +25,7 @@ function KitSummary() {
                 <LinkButton route={"/smcc"}>Edit Inputs</LinkButton>
                 <Button isActive={false}>Kit Summary</Button>
                 <LinkButton route={"/partSummary"}>Part Summary</LinkButton>
+                <LinkButton route={"/totals"}>Totals</LinkButton>
                 <CSVButton />
             </TabNavigation>
             <h2>KIT SUMMARY</h2>

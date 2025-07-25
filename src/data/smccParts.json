@@ -1298,7 +1298,7 @@
     {
         "id": "STC-32",
         "description": "STC with 32 functions",
-        "manufacturer": "SunCoast",
+        "manufacturer": "Sun Coast",
         "price": 11067.24,
         "mm": 0,
         "category": "misc"
@@ -1306,7 +1306,7 @@
     {
         "id": "STC-48",
         "description": "STC with 48 functions",
-        "manufacturer": "SunCoast",
+        "manufacturer": "Sun Coast",
         "price": 11567.24,
         "mm": 0,
         "category": "misc"
@@ -1314,7 +1314,7 @@
     {
         "id": "STC-64",
         "description": "STC with 64 functions",
-        "manufacturer": "SunCoast",
+        "manufacturer": "Sun Coast",
         "price": 12067.24,
         "mm": 0,
         "category": "misc"
@@ -1322,7 +1322,7 @@
     {
         "id": "STC-80",
         "description": "STC with 80 functions",
-        "manufacturer": "SunCoast",
+        "manufacturer": "Sun Coast",
         "price": 12567.24,
         "mm": 0,
         "category": "misc"
@@ -1330,7 +1330,7 @@
     {
         "id": "STC-96",
         "description": "STC with 96 functions",
-        "manufacturer": "SunCoast",
+        "manufacturer": "Sun Coast",
         "price": 13067.24,
         "mm": 0,
         "category": "misc"
@@ -1338,7 +1338,7 @@
     {
         "id": "STC-112",
         "description": "STC with 112 functions",
-        "manufacturer": "SunCoast",
+        "manufacturer": "Sun Coast",
         "price": 13567.24,
         "mm": 0,
         "category": "misc"
@@ -1346,7 +1346,7 @@
     {
         "id": "STC-128",
         "description": "STC with 128 functions",
-        "manufacturer": "SunCoast",
+        "manufacturer": "Sun Coast",
         "price": 14067.24,
         "mm": 0,
         "category": "misc"
@@ -1494,5 +1494,93 @@
         "price": 0,
         "mm": 0,
         "category": "misc"
+    },
+    {
+        "id": "labor-small",
+        "description": "Labor - Small",
+        "manufacturer": "Sun Coast",
+        "price": 0,
+        "mm": 0,
+        "category": "labor"
+    },
+    {
+        "id": "labor-medium",
+        "description": "Labor - Medium",
+        "manufacturer": "Sun Coast",
+        "price": 7120.0,
+        "mm": 0,
+        "category": "labor"
+    },
+    {
+        "id": "labor-large",
+        "description": "Labor - Large",
+        "manufacturer": "Sun Coast",
+        "price": 7520.0,
+        "mm": 0,
+        "category": "labor"
+    },
+    {
+        "id": "labor-xlarge",
+        "description": "Labor - Extra Large",
+        "manufacturer": "Sun Coast",
+        "price": 0,
+        "mm": 0,
+        "category": "labor"
+    },
+    {
+        "id": "consumables-small",
+        "description": "Consumables - Small",
+        "manufacturer": "Sun Coast",
+        "price": 25.0,
+        "mm": 0,
+        "category": "consumables"
+    },
+    {
+        "id": "consumables-medium",
+        "description": "Consumables - Medium",
+        "manufacturer": "Sun Coast",
+        "price": 50.0,
+        "mm": 0,
+        "category": "consumables"
+    },
+    {
+        "id": "consumables-large",
+        "description": "Consumables - Large",
+        "manufacturer": "Sun Coast",
+        "price": 100.0,
+        "mm": 0,
+        "category": "consumables"
+    },
+    {
+        "id": "consumables-xlarge",
+        "description": "Consumables - Extra Large",
+        "manufacturer": "Sun Coast",
+        "price": 150.0,
+        "mm": 0,
+        "category": "consumables"
+    },
+    {
+        "id": "labor-install",
+        "description": "Labor - Install",
+        "manufacturer": "Sun Coast",
+        "price": 4000.0,
+        "mm": 0,
+        "category": "labor"
+    },
+    {
+        "id": "freight",
+        "description": "Inbound Freight",
+        "manufacturer": "Sun Coast",
+        "price": 150.0,
+        "mm": 0,
+        "category": "labor"
+    },
+    {
+        "id": "consumables-misc",
+        "description": "Consumables - Misc",
+        "manufacturer": "Sun Coast",
+        "price": 500.0,
+        "mm": 0,
+        "category": "labor"
     }
 ]

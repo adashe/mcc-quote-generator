@@ -48,13 +48,13 @@ function SmccOptions() {
                             <option disabled="disabled" value="...">
                                 ...
                             </option>
-                            <option value="stc32">32</option>
-                            <option value="stc48">48</option>
-                            <option value="stc64">64</option>
-                            <option value="stc80">80</option>
-                            <option value="stc96">96</option>
-                            <option value="stc112">112</option>
-                            <option value="stc128">128</option>
+                            <option value="STC-32">32</option>
+                            <option value="STC-48">48</option>
+                            <option value="STC-64">64</option>
+                            <option value="STC-80">80</option>
+                            <option value="STC-96">96</option>
+                            <option value="STC-112">112</option>
+                            <option value="STC-128">128</option>
                         </select>
                     </label>
                 </div>

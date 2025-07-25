@@ -34,7 +34,7 @@ function calcKitPrice(kitID) {
 
     // Cycle through kit components array, use ID to look up in partsData, and sum the price
     let sum = 0;
-    kit.components.forEach((component) => {
+    kit?.components.forEach((component) => {
         const pArr = partsData.filter((part) => part.id === component);
         const part = pArr[0];
         sum += part?.price || 0;

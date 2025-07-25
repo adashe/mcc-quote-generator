@@ -2,7 +2,14 @@
     {
         "id": "small",
         "description": "Non Variable Parts - Small",
-        "components": ["01245"],
+        "components": [
+            "01245",
+            "labor-small",
+            "consumables-small",
+            "consumables-misc",
+            "labor-install",
+            "freight"
+        ],
         "price": 1,
         "fla": null
     },
@@ -10,6 +17,11 @@
         "id": "medium",
         "description": "Non Variable Parts - Medium",
         "components": [
+            "labor-medium",
+            "consumables-medium",
+            "consumables-misc",
+            "labor-install",
+            "freight",
             "01245",
             "01358",
             "01508",
@@ -112,6 +124,11 @@
         "id": "large",
         "description": "Non Variable Parts - Large",
         "components": [
+            "labor-large",
+            "consumables-large",
+            "consumables-misc",
+            "labor-install",
+            "freight",
             "01245",
             "01358",
             "01508",
@@ -216,7 +233,14 @@
     {
         "id": "xlarge",
         "description": "Non Variable Parts - Extra Large",
-        "components": ["01245"],
+        "components": [
+            "01245",
+            "labor-xlarge",
+            "consumables-xlarge",
+            "consumables-misc",
+            "labor-install",
+            "freight"
+        ],
         "price": 1,
         "fla": null
     },
@@ -245,51 +269,51 @@
         "fla": null
     },
     {
-        "id": "stc32",
+        "id": "STC-32",
         "description": "STC-32",
-        "components": ["GMA-3.5-R", "GMC-1-R"],
+        "components": ["STC-32"],
         "price": 1,
         "fla": null
     },
     {
-        "id": "stc48",
+        "id": "STC-48",
         "description": "STC-48",
-        "components": ["GMA-3.5-R", "GMC-1-R"],
+        "components": ["STC-48"],
         "price": 1,
         "fla": null
     },
     {
-        "id": "stc64",
+        "id": "STC-64",
         "description": "STC-64",
-        "components": ["GMA-3.5-R", "GMC-1-R"],
+        "components": ["STC-64"],
         "price": 1,
         "fla": null
     },
     {
-        "id": "stc80",
+        "id": "STC-80",
         "description": "STC-80",
-        "components": ["GMA-3.5-R", "GMC-1-R"],
+        "components": ["STC-80"],
         "price": 1,
         "fla": null
     },
     {
-        "id": "stc96",
+        "id": "STC-96",
         "description": "STC-96",
-        "components": ["GMA-3.5-R", "GMC-1-R"],
+        "components": ["STC-96"],
         "price": 1,
         "fla": null
     },
     {
-        "id": "stc112",
+        "id": "STC-112",
         "description": "STC-112",
-        "components": ["GMA-3.5-R", "GMC-1-R"],
+        "components": ["STC-112"],
         "price": 1,
         "fla": null
     },
     {
-        "id": "stc128",
+        "id": "STC-128",
         "description": "STC-128",
-        "components": ["GMA-3.5-R", "GMC-1-R"],
+        "components": ["STC-128"],
         "price": 1,
         "fla": null
     }

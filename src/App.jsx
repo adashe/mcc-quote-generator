@@ -13,6 +13,7 @@ import Form460VMCC from "./pages/Form460VMCC";
 import ProjectInfo from "./pages/ProjectInfo";
 import KitSummary from "./pages/KitSummary/KitSummary";
 import PartSummary from "./pages/PartSummary/PartSummary";
+import Totals from "./pages/Totals";
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
                         <Route path="projectInfo" element={<ProjectInfo />} />
                         <Route path="kitSummary" element={<KitSummary />} />
                         <Route path="partSummary" element={<PartSummary />} />
+                        <Route path="totals" element={<Totals />} />
                     </Routes>
                 </BrowserRouter>
             </SmccProvider>
