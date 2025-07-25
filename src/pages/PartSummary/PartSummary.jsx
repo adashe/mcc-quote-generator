@@ -10,7 +10,8 @@ import TabNavigation from "../../components/TabNavigation";
 import LinkButton from "../../components/buttons/LinkButton";
 
 function PartSummary() {
-    const { kitsData, partsData, assembly } = useSmcc();
+    const { kitsData, optionsData, partsData, assembly, baseAssembly } =
+        useSmcc();
 
     // Build a parts list from the assembly object with the parts numbers and their quantities
     let partsList = {};
@@ -23,6 +24,20 @@ function PartSummary() {
                 (component) =>
                     (partsList[component] =
                         partsList[component] + assembly[k] || assembly[k])
+            );
+        }
+    }
+
+    // Add parts from the baseAssembly object with the parts numbers and their quantities
+    for (const k in baseAssembly) {
+        if (baseAssembly[k] > 0) {
+            const arr = optionsData.filter((kit) => kit.id === k);
+            const kit = arr[0];
+            kit.components.forEach(
+                (component) =>
+                    (partsList[component] =
+                        partsList[component] + baseAssembly[k] ||
+                        baseAssembly[k])
             );
         }
     }

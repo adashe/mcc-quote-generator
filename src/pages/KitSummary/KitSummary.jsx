@@ -8,10 +8,15 @@ import { CSVButton } from "../../components/CSVButton";
 import TabNavigation from "../../components/TabNavigation";
 
 function KitSummary() {
-    const { kitsData, assembly } = useSmcc();
+    const { kitsData, optionsData, assembly, baseAssembly } = useSmcc();
 
     // Filter kitsData to include only kits selected by user
     const selectedKitsArr = kitsData.filter((kit) => assembly[kit.id] > 0);
+
+    // Filter optionsData to include only options selected by user
+    const selectedOptionsArr = optionsData.filter(
+        (kit) => baseAssembly[kit.id] > 0
+    );
 
     return (
         <PageWide>
@@ -22,6 +27,10 @@ function KitSummary() {
                 <CSVButton />
             </TabNavigation>
             <h2>KIT SUMMARY</h2>
+
+            {selectedOptionsArr.map((kit, i) => (
+                <KitSummaryRow kit={kit} key={i} />
+            ))}
 
             {selectedKitsArr.map((kit, i) => (
                 <KitSummaryRow kit={kit} key={i} />

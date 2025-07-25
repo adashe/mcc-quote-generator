@@ -4,8 +4,10 @@ import KitSummaryPartsList from "./KitSummaryPartsList";
 import { useState } from "react";
 
 function KitSummaryRow({ kit }) {
-    const { assembly, calcKitPrice } = useSmcc();
+    const { assembly, baseAssembly, calcKitPrice } = useSmcc();
     const [isOpen, setIsOpen] = useState(false);
+
+    const quantity = assembly[kit.id] || baseAssembly[kit.id];
 
     function handleOpen() {
         setIsOpen(!isOpen);
@@ -16,15 +18,14 @@ function KitSummaryRow({ kit }) {
             <div className={styles.headerRow} onClick={handleOpen}>
                 <div className={styles.kitDesc}>{kit.description}</div>
                 <div className={`${styles.kitCol} ${styles.kitQty}`}>
-                    Qty: {assembly[kit.id]}
+                    Qty: {quantity}
                 </div>
 
                 <div className={styles.kitCol}>
                     Price: ${calcKitPrice(kit.id).toFixed(2)}
                 </div>
                 <div className={styles.kitCol}>
-                    Total: $
-                    {(calcKitPrice(kit.id) * assembly[kit.id]).toFixed(2)}
+                    Total: ${(calcKitPrice(kit.id) * quantity).toFixed(2)}
                 </div>
 
                 {isOpen ? (
@@ -43,7 +44,7 @@ function KitSummaryRow({ kit }) {
                     <div>
                         <KitSummaryPartsList
                             components={kit.components}
-                            kitQuantity={assembly[kit.id]}
+                            kitQuantity={quantity}
                         />
                     </div>
                 ) : (

@@ -1,6 +1,7 @@
 import { createContext, useState, useContext } from "react";
 
 import kitsData from "../data/smccKits";
+import optionsData from "../data/smccOptionsKits.json";
 import partsData from "../data/smccParts";
 
 const SmccContext = createContext();
@@ -12,15 +13,27 @@ const initialAssembly = kitsData.reduce((prev, curr) => {
 }, {});
 
 const initialOptions = {};
+
+// Build initial options assembly object based on kits in kitsData
+const initialBaseAssembly = optionsData.reduce((prev, curr) => {
+    prev[curr.id] = 0;
+    return prev;
+}, {});
+
 const initialProjectInfo = {};
 
 // Calculate the price of each individual kit, for use in total price calculation and kits view
 function calcKitPrice(kitID) {
-    const kArr = kitsData.filter((kit) => kit.id === kitID);
+    // Check in both kitsData and optionsData for the kit
+    // Vulnerable to break if the data is differently organized (for different MCCs)
+    let kArr = kitsData.filter((kit) => kit.id === kitID);
+    if (kArr.length < 1) {
+        kArr = optionsData.filter((kit) => kit.id === kitID);
+    }
     const kit = kArr[0];
-    let sum = 0;
 
     // Cycle through kit components array, use ID to look up in partsData, and sum the price
+    let sum = 0;
     kit.components.forEach((component) => {
         const pArr = partsData.filter((part) => part.id === component);
         const part = pArr[0];
@@ -32,6 +45,7 @@ function calcKitPrice(kitID) {
 function SmccProvider({ children }) {
     const [assembly, setAssembly] = useState(initialAssembly);
     const [options, setOptions] = useState(initialOptions);
+    const [baseAssembly, setBaseAssembly] = useState(initialBaseAssembly);
     const [projectInfo, setProjectInfo] = useState(initialProjectInfo);
 
     function handleChangeAssembly(e) {
@@ -54,7 +68,7 @@ function SmccProvider({ children }) {
 
         // setAssembly with size and stc kits, resetting mutually exclusive options to 0
         if (name === "size") {
-            setAssembly((previous) => ({
+            setBaseAssembly((previous) => ({
                 ...previous,
                 ["small"]: 0,
                 ["medium"]: 0,
@@ -64,7 +78,7 @@ function SmccProvider({ children }) {
                 [value]: 1,
             }));
         } else if (name === "stc") {
-            setAssembly((previous) => ({
+            setBaseAssembly((previous) => ({
                 ...previous,
                 ["stc32"]: 0,
                 ["stc48"]: 0,
@@ -92,9 +106,11 @@ function SmccProvider({ children }) {
         <SmccContext.Provider
             value={{
                 kitsData,
+                optionsData,
                 partsData,
                 assembly,
                 options,
+                baseAssembly,
                 projectInfo,
                 handleChangeAssembly,
                 handleChangeOptions,
