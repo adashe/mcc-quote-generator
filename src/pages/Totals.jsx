@@ -7,15 +7,8 @@ import { useSmcc } from "../contexts/SmccContext";
 import styles from "./Totals.module.css";
 
 function Totals() {
-    const {
-        kitsData,
-        optionsData,
-        partsData,
-        assembly,
-        options,
-        baseAssembly,
-        calcKitPrice,
-    } = useSmcc();
+    const { partsData, assembly, options, baseAssembly, calcKitPrice } =
+        useSmcc();
 
     // Calculate total price of assembly object
     let assemblyPrice = 0;
