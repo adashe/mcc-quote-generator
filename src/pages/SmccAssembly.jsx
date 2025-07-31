@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-
-import Button from "../components/buttons/Button.jsx";
+import { useState } from "react";
 import PageNarrow from "../components/PageNarrow.jsx";
 
 import { KitsForm } from "../components/KitsForm.jsx";
@@ -14,6 +13,16 @@ function SmccAssembly() {
     const { kitsData, assembly, handleChangeAssembly, calcKitPrice } =
         useSmcc();
 
+    const [filter, setFilter] = useState("");
+
+    function handleUpdateFilter(e) {
+        setFilter(e.target.value);
+    }
+
+    const filteredData = kitsData.filter((kit) =>
+        kit.description.toLowerCase().includes(filter.toLowerCase())
+    );
+
     return (
         <PageNarrow>
             <TabNavigation>
@@ -21,8 +30,16 @@ function SmccAssembly() {
                 <LinkButton route={"/smccOptions"}>Options &rarr;</LinkButton>
             </TabNavigation>
             <h2>SMCC KITS</h2>
+            <form>
+                <input
+                    type="text"
+                    onChange={handleUpdateFilter}
+                    value={filter}
+                    placeholder="Search"
+                />
+            </form>
             <KitsForm>
-                {kitsData.map((kit) => (
+                {filteredData.map((kit) => (
                     <KitRow
                         assembly={assembly}
                         kit={kit}
