@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import PageNarrow from "../components/PageNarrow.jsx";
 
@@ -6,6 +5,7 @@ import { KitsForm } from "../components/KitsForm.jsx";
 import { KitRow } from "../components/KitRow.jsx";
 
 import { useSmcc } from "../contexts/SmccContext.jsx";
+import styles from "./AssemblyForm.module.css";
 import LinkButton from "../components/buttons/LinkButton.jsx";
 import TabNavigation from "../components/TabNavigation.jsx";
 
@@ -32,6 +32,7 @@ function SmccAssembly() {
             <h2>SMCC KITS</h2>
             <form>
                 <input
+                    className={styles.searchBar}
                     type="text"
                     onChange={handleUpdateFilter}
                     value={filter}
