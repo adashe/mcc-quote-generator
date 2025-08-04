@@ -51,7 +51,7 @@ span.kitRowDesc {
 span.materialSymbolsOutlined:hover {
     color: var(--color-light--2);
 }
-/* Remove up/down spinner arrows from input fields */
+/* Remove spinner arrows from input fields */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;

@@ -63,7 +63,7 @@ function SmccProvider({ children }) {
         }
         setAssembly((previous) => ({
             ...previous,
-            [kitID]: assembly[kitID] + value || value,
+            [kitID]: assembly[kitID] + value,
         }));
     }
 

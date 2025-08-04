@@ -10,8 +10,7 @@ import LinkButton from "../components/buttons/LinkButton.jsx";
 import TabNavigation from "../components/TabNavigation.jsx";
 
 function SmccAssembly() {
-    const { kitsData, assembly, handleChangeAssembly, calcKitPrice } =
-        useSmcc();
+    const { kitsData } = useSmcc();
 
     const [filter, setFilter] = useState("");
 
