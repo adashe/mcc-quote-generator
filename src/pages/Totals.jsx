@@ -1,7 +1,7 @@
 import TabNavigation from "../components/TabNavigation";
 import Button from "../components/buttons/Button";
 import LinkButton from "../components/buttons/LinkButton";
-import { CSVButton } from "../components/CSVButton";
+import { CSVButton } from "../components/buttons/CSVButton";
 import PageWide from "../components/PageWide";
 import { useSmcc } from "../contexts/SmccContext";
 import styles from "./Totals.module.css";

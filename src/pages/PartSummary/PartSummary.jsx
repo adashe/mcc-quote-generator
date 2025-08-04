@@ -1,4 +1,4 @@
-import { CSVButton } from "../../components/CSVButton";
+import { CSVButton } from "../../components/buttons/CSVButton";
 import PageWide from "../../components/PageWide";
 import { useSmcc } from "../../contexts/SmccContext";
 import { PartsListRow } from "./PartsListRow";
