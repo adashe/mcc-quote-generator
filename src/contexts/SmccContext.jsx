@@ -57,6 +57,16 @@ function SmccProvider({ children }) {
         }));
     }
 
+    function handleIncrementAssembly(kitID, value) {
+        if (assembly[kitID] + value < 0) {
+            return;
+        }
+        setAssembly((previous) => ({
+            ...previous,
+            [kitID]: assembly[kitID] + value || value,
+        }));
+    }
+
     function handleChangeOptions(e) {
         const { name, value } = e.target;
 
@@ -113,6 +123,7 @@ function SmccProvider({ children }) {
                 baseAssembly,
                 projectInfo,
                 handleChangeAssembly,
+                handleIncrementAssembly,
                 handleChangeOptions,
                 handleChangeProjectInfo,
                 calcKitPrice,

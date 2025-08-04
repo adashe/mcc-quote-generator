@@ -41,13 +41,7 @@ function SmccAssembly() {
             </form>
             <KitsForm>
                 {filteredData.map((kit) => (
-                    <KitRow
-                        assembly={assembly}
-                        kit={kit}
-                        handleChangeAssembly={handleChangeAssembly}
-                        calcKitPrice={calcKitPrice}
-                        key={kit.id}
-                    />
+                    <KitRow kit={kit} key={kit.id} />
                 ))}
             </KitsForm>
         </PageNarrow>
