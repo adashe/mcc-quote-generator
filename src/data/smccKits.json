@@ -91,7 +91,7 @@
     },
     {
         "id": "starter30hp",
-        "description": "20 and 25HP Starter/MSP",
+        "description": "30HP Starter/MSP",
         "components": [
             "3RV2742-5LD10",
             "TPRST065",

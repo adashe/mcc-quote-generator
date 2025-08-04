@@ -28,7 +28,7 @@ export function KitRow({ kit }) {
                         className={styles.kitRowInput}
                         type="number"
                         name={kit.id}
-                        value={assembly[kit.id]}
+                        value={Number(assembly[kit.id]).toString()}
                         onChange={handleChangeAssembly}
                         onFocus={handleSelect}
                         min={0}
