@@ -32,6 +32,7 @@ function SmccAssembly() {
             <form>
                 <input
                     className={styles.searchBar}
+                    name="search"
                     type="text"
                     onChange={handleUpdateFilter}
                     value={filter}

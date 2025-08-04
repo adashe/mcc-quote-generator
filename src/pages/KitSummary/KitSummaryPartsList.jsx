@@ -13,6 +13,8 @@ function KitSummaryPartsList({ components, kitQuantity }) {
         kitParts[component] = kitParts[component] + 1 || 1;
     });
 
+    console.log(kitParts);
+
     // Use the kitBom object to filter the partsData array
     const selectedPartsArr = partsData.filter((part) => kitParts[part.id] > 0);
 
