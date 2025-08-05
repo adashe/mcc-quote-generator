@@ -43,7 +43,7 @@ function KitSummaryRow({ kit }) {
                 {isOpen ? (
                     <div>
                         <KitSummaryPartsList
-                            components={kit.components}
+                            parts={kit.parts}
                             kitQuantity={quantity}
                         />
                     </div>

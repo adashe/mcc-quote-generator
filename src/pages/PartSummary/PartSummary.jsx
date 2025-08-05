@@ -14,15 +14,21 @@ function PartSummary() {
     // Build a parts list from the assembly object with the parts numbers and their quantities
     let partsList = {};
 
-    for (const k in assembly) {
-        if (assembly[k] > 0) {
+    // Build a parts list from the assembly object with the parts numbers and their quantities
+    for (const k in baseAssembly) {
+        if (baseAssembly[k] > 0) {
             const arr = kitsData.filter((kit) => kit.id === k);
             const kit = arr[0];
-            kit.components.forEach(
-                (component) =>
-                    (partsList[component] =
-                        partsList[component] + assembly[k] || assembly[k])
-            );
+            kit?.parts.forEach((part) => {
+                const keysArr = Object.keys(part);
+                const partID = keysArr[0];
+
+                const qtyArr = Object.values(part);
+                const qty = qtyArr[0];
+
+                partsList[partID] =
+                    partsList[partID] + assembly[k] * qty || assembly[k] * qty;
+            });
         }
     }
 
@@ -31,12 +37,17 @@ function PartSummary() {
         if (baseAssembly[k] > 0) {
             const arr = optionsData.filter((kit) => kit.id === k);
             const kit = arr[0];
-            kit.components.forEach(
-                (component) =>
-                    (partsList[component] =
-                        partsList[component] + baseAssembly[k] ||
-                        baseAssembly[k])
-            );
+            kit?.parts.forEach((part) => {
+                const keysArr = Object.keys(part);
+                const partID = keysArr[0];
+
+                const qtyArr = Object.values(part);
+                const qty = qtyArr[0];
+
+                partsList[partID] =
+                    partsList[partID] + baseAssembly[k] * qty ||
+                    baseAssembly[k] * qty;
+            });
         }
     }
 
