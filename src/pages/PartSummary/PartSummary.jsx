@@ -1,4 +1,3 @@
-import { CSVButton } from "../../components/buttons/CSVButton";
 import PageWide from "../../components/PageWide";
 import { useSmcc } from "../../contexts/SmccContext";
 import { PartsListRow } from "./PartsListRow";
@@ -6,6 +5,7 @@ import styles from "./PartsListRow.module.css";
 import Button from "../../components/buttons/Button";
 import TabNavigation from "../../components/TabNavigation";
 import LinkButton from "../../components/buttons/LinkButton";
+import { XlsxButton } from "../../components/buttons/XlsxButton";
 
 function PartSummary() {
     const { kitsData, optionsData, partsData, assembly, baseAssembly } =
@@ -15,8 +15,8 @@ function PartSummary() {
     let partsList = {};
 
     // Build a parts list from the assembly object with the parts numbers and their quantities
-    for (const k in baseAssembly) {
-        if (baseAssembly[k] > 0) {
+    for (const k in assembly) {
+        if (assembly[k] > 0) {
             const arr = kitsData.filter((kit) => kit.id === k);
             const kit = arr[0];
             kit?.parts.forEach((part) => {
@@ -35,11 +35,8 @@ function PartSummary() {
             const arr = optionsData.filter((kit) => kit.id === k);
             const kit = arr[0];
             kit?.parts.forEach((part) => {
-                const keysArr = Object.keys(part);
-                const partID = keysArr[0];
-
-                const qtyArr = Object.values(part);
-                const qty = qtyArr[0];
+                const partID = Object.keys(part)[0];
+                const qty = Object.values(part)[0];
 
                 partsList[partID] =
                     partsList[partID] + baseAssembly[k] * qty ||
@@ -58,7 +55,7 @@ function PartSummary() {
                 <LinkButton route={"/kitSummary"}>Kit Summary</LinkButton>
                 <Button isActive={false}>Part Summary</Button>
                 <LinkButton route={"/totals"}>Totals</LinkButton>
-                <CSVButton />
+                <XlsxButton />
             </TabNavigation>
             <h2>PART SUMMARY</h2>
             <ul>

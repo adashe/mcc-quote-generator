@@ -1,10 +1,10 @@
 import TabNavigation from "../components/TabNavigation";
 import Button from "../components/buttons/Button";
 import LinkButton from "../components/buttons/LinkButton";
-import { CSVButton } from "../components/buttons/CSVButton";
 import PageWide from "../components/PageWide";
 import { useSmcc } from "../contexts/SmccContext";
 import styles from "./Totals.module.css";
+import { XlsxButton } from "../components/buttons/XlsxButton";
 
 function Totals() {
     const { partsData, assembly, options, baseAssembly, calcKitPrice } =
@@ -51,7 +51,7 @@ function Totals() {
                 <LinkButton route={"/partSummary"}>Part Summary</LinkButton>
                 <Button isActive={false}>Totals</Button>
 
-                <CSVButton />
+                <XlsxButton />
             </TabNavigation>
             <h2>Totals</h2>
             <ul className={styles.totalsUl}>
