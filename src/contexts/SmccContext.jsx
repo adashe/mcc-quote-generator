@@ -48,11 +48,8 @@ function calcKitPrice(kitID) {
     // Cycle through kit parts array, use each part objects' key (ID) to look up in partsData, and sum the price
     let sum = 0;
     kit?.parts.forEach((part) => {
-        const keysArr = Object.keys(part);
-        const partID = keysArr[0];
-
-        const qtyArr = Object.values(part);
-        const qty = qtyArr[0];
+        const partID = Object.keys(part)[0];
+        const qty = Object.values(part)[0];
 
         const pArr = partsData.filter((part) => part.id === partID);
         const p = pArr[0];
