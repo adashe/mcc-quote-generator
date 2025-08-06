@@ -6,19 +6,6 @@ import partsData from "../data/smccParts";
 
 const SmccContext = createContext();
 
-/* function convertJSON(data) {
-    let parts = [];
-    kitsData.map((kit) => parts.push(() => convertKitToArr(kit)));
-}
-
-function convertKitToArr(kit) {
-    let kitArr = [];
-    kit.components.map((component) => [...kitArr, { [`"${component}"`]: 1 }]);
-    console.log(kitArr);
-    return kitArr;
-}
-convertJSON(kitsData); */
-
 // Build initial assembly object based on kits in kitsData
 const initialAssembly = kitsData.reduce((prev, curr) => {
     prev[curr.id] = 0;
@@ -61,7 +48,9 @@ function calcKitPrice(kitID) {
 
 function SmccProvider({ children }) {
     const [assembly, setAssembly] = useState(initialAssembly);
+    // options stores the selections in the options form that will make up the baseAssembly object
     const [options, setOptions] = useState(initialOptions);
+    // baseAssembly is the assembly object built out of selected options
     const [baseAssembly, setBaseAssembly] = useState(initialBaseAssembly);
     const [projectInfo, setProjectInfo] = useState(initialProjectInfo);
 
