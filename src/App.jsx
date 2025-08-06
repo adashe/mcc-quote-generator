@@ -15,7 +15,7 @@ function App() {
     return (
         <>
             <SmccProvider>
-                <BrowserRouter basename="/mcc-quote-generator/">
+                <BrowserRouter basename="/smcc-quote-generator/">
                     <Routes>
                         <Route index element={<SmccAssembly />} />
 
