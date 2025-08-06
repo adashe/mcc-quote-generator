@@ -16,7 +16,12 @@ function SmccAssembly() {
     const [filter, setFilter] = useState("");
 
     function handleUpdateFilter(e) {
+        e.preventDefault();
         setFilter(e.target.value);
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
     }
 
     const filteredData = kitsData.filter((kit) =>
@@ -30,7 +35,7 @@ function SmccAssembly() {
                 <LinkButton route={"/smccOptions"}>Options &rarr;</LinkButton>
             </TabNavigation>
             <h2>SMCC KITS</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                     className={styles.searchBar}
                     name="search"
