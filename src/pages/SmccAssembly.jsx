@@ -8,6 +8,7 @@ import { useSmcc } from "../contexts/SmccContext.jsx";
 import styles from "./AssemblyForm.module.css";
 import LinkButton from "../components/buttons/LinkButton.jsx";
 import TabNavigation from "../components/TabNavigation.jsx";
+import RestartButton from "../components/buttons/RestartButton.jsx";
 
 function SmccAssembly() {
     const { kitsData } = useSmcc();
@@ -25,7 +26,7 @@ function SmccAssembly() {
     return (
         <PageNarrow>
             <TabNavigation>
-                <LinkButton route={"/"}>&larr; Configurators</LinkButton>
+                <RestartButton />
                 <LinkButton route={"/smccOptions"}>Options &rarr;</LinkButton>
             </TabNavigation>
             <h2>SMCC KITS</h2>
