@@ -8,8 +8,8 @@ export function XlsxButton() {
         optionsData,
         partsData,
         assembly,
+        options,
         baseAssembly,
-        projectInfo,
     } = useSmcc();
 
     function downloadXlsx() {
@@ -51,7 +51,7 @@ export function XlsxButton() {
 
             // Build the download array
             let rows = [];
-            const quoteID = projectInfo.p21Num;
+            const jobNum = options.jobNum;
 
             const selectedPartsArr = partsData.filter(
                 (part) => partsList[part.id] > 0
@@ -61,7 +61,7 @@ export function XlsxButton() {
                 const row = {
                     ID: i + 1,
                     "Main ID": 1,
-                    "Item ID": quoteID,
+                    "Item ID": jobNum,
                     "Component ID": part.id,
                     "Qty Per Assembly": partsList[part.id],
                     "Save Changes": "Y",
@@ -70,7 +70,7 @@ export function XlsxButton() {
             });
 
             // Build the cover sheet array
-            let cover = [{ ID: 1, "Item ID": quoteID, "Save Changes": "Y" }];
+            let cover = [{ ID: 1, "Item ID": jobNum, "Save Changes": "Y" }];
 
             /* generate worksheet from cover array */
             const cws = utils.json_to_sheet(cover);
@@ -81,16 +81,16 @@ export function XlsxButton() {
             /* create workbook and append worksheet */
             const wb = utils.book_new();
             utils.book_append_sheet(wb, cws, "Assembly");
-            utils.book_append_sheet(wb, ws, `${quoteID} Prophet21 BoM Input`);
+            utils.book_append_sheet(wb, ws, `${jobNum} Prophet21 BoM Input`);
 
             /* export to XLSX */
-            writeFile(wb, `${quoteID} Prophet21 BoM Input.xlsx`);
+            writeFile(wb, `${jobNum} Prophet21 BoM Input.xlsx`);
         }
     }
 
     return (
         <Button className="active" onClick={downloadXlsx}>
-            DOWNLOAD XLSX
+            EXPORT TO P21
         </Button>
     );
 }

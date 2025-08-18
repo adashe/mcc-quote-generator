@@ -95,11 +95,9 @@ function SmccProvider({ children }) {
             }));
 
             // Retrieve labor "part" based on selected size
-            const selectedLaborArr = partsData.filter(
+            const selectedLabor = partsData.filter(
                 (part) => part.id === `labor-${value}`
-            );
-            const selectedLabor = selectedLaborArr[0];
-            console.log(selectedLabor.price);
+            )[0];
 
             // Set labor option value to the price of the selected size
             setOptions((previous) => ({

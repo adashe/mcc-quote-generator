@@ -25,6 +25,19 @@ function SmccOptions() {
             <form>
                 <div>
                     <label>
+                        Job Number:
+                        <input
+                            type="text"
+                            name="jobNum"
+                            value={options.jobNum || ""}
+                            onChange={handleChangeOptions}
+                            onFocus={handleSelect}
+                        />
+                    </label>
+                </div>
+
+                <div>
+                    <label>
                         Size:
                         <select
                             name="size"
@@ -70,7 +83,7 @@ function SmccOptions() {
                         <input
                             type="number"
                             name="labor"
-                            value={Number(options.labor) || 0}
+                            value={Number(options.labor).toFixed(2) || 0}
                             onChange={handleChangeOptions}
                             onFocus={handleSelect}
                         />

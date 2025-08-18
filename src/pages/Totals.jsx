@@ -28,30 +28,52 @@ function Totals() {
         baseAssemblyPrice += kitPrice * quantity;
     }
 
+    // Calculate total price of spare and shipped loose kit
+    // Calculate total price of baseAssembly object
+    let spareShippedLoosePrice = calcKitPrice("spareShippedLoose") || 0;
+
+    // for (const kitID in baseAssembly) {
+    //     const quantity = baseAssembly[kitID];
+    //     const kitPrice = calcKitPrice(kitID);
+    //     baseAssemblyPrice += kitPrice * quantity;
+    // }
+
     // Retrieve STC cost
-    const selectedStcArr = partsData.filter((part) => part.id === options.stc);
-    const selectedStc = selectedStcArr[0];
+    const selectedStc = partsData.filter((part) => part.id === options.stc)[0];
 
     // Retrieve labor "part" based on selected size or options input
-    const selectedLaborArr = partsData.filter(
+    const selectedSizeLabor = partsData.filter(
         (part) => part.id === `labor-${options.size}`
-    );
-    const selectedSize = selectedLaborArr[0];
-    const updatedLabor = Number(options.labor) || selectedSize.price || 0;
+    )[0];
+    const updatedLabor = Number(options.labor) || selectedSizeLabor?.price || 0;
 
     // Update baseAssembly price if labor has been edited in options form
     if (
         options.labor &&
-        selectedSize.price &&
-        options.labor != selectedSize.price
+        selectedSizeLabor.price &&
+        options.labor != selectedSizeLabor.price
     ) {
-        baseAssemblyPrice -= selectedSize.price | 0;
+        baseAssemblyPrice -= selectedSizeLabor.price | 0;
         baseAssemblyPrice += Number(options.labor);
     }
 
     // Retrieve install "part"
-    const installArr = partsData.filter((part) => part.id === "labor-install");
-    const install = installArr[0];
+    const install = partsData.filter((part) => part.id === "labor-install")[0];
+
+    // Retrieve freight "part"
+    const freight = partsData.filter((part) => part.id === "freight")[0];
+
+    // Retrieve and sum consumables
+    const consumablesMisc = partsData.filter(
+        (part) => part.id === "consumables-misc"
+    )[0];
+
+    const consumablesSize = partsData.filter(
+        (part) => part.id === `consumables-${options.size}`
+    )[0];
+
+    const totalConsumables =
+        consumablesMisc?.price + consumablesSize?.price || 0;
 
     return (
         <PageWide>
@@ -66,15 +88,37 @@ function Totals() {
             </TabNavigation>
             <h2>Totals</h2>
             <ul className={styles.totalsUl}>
-                <li>Assembly Price: ${assemblyPrice?.toFixed(2)}</li>
+                <li>SMCC Price: ${assemblyPrice?.toFixed(2)}</li>
                 <li>Base Assembly Price: ${baseAssemblyPrice?.toFixed(2)}</li>
                 <ul>
                     Includes:
                     <li>
-                        {options.stc}: ${selectedStc?.price.toFixed(2)}
+                        {options.stc || "STC"}: $
+                        {selectedStc?.price.toFixed(2) || "0.00"}
                     </li>
-                    <li>Labor: ${updatedLabor.toFixed(2)}</li>
-                    <li>Install: ${install?.price.toFixed(2)}</li>
+                    <li>Labor: ${updatedLabor.toFixed(2) || "0.00"}</li>
+                    <li>
+                        Install Labor: ${install?.price.toFixed(2) || "0.00"}
+                    </li>
+                    <li>Freight: ${freight?.price.toFixed(2) || "0.00"}</li>
+                    <li>
+                        Consumables: ${totalConsumables?.toFixed(2) || "0.00"}
+                    </li>
+                    <li>
+                        Spare and Shipped Loose: $
+                        {spareShippedLoosePrice.toFixed(2) || "0.00"}
+                    </li>
+                    <li>
+                        Base Components: $
+                        {(
+                            baseAssemblyPrice -
+                                selectedStc?.price -
+                                updatedLabor -
+                                install?.price -
+                                freight?.price -
+                                totalConsumables || 0 - spareShippedLoosePrice
+                        ).toFixed(2) || "0.00"}
+                    </li>
                 </ul>
 
                 <li>
