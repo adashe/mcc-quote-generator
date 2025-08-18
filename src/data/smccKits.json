@@ -190,25 +190,20 @@
     },
     {
         "id": "breaker1hp",
-        "description": "1 and 1.5HP Breaker Only -check",
+        "description": "1 and 1.5HP Breaker -chk",
         "parts": [
-            { "VW3A3616": 1 },
-            { "RLW-04P803": 1 },
             { "GV2P10": 1 },
             { "2006-1201": 3 },
             { "2006-1207": 1 },
-            { "2006-1292": 1 },
-            { "GBPO1001-15-BLUB": 1 }
+            { "2006-1292": 1 }
         ],
         "price": 1,
         "fla": null
     },
     {
         "id": "breaker3hp",
-        "description": "2 and 3HP Breaker Only -check",
+        "description": "2 and 3HP Breaker -chk",
         "parts": [
-            { "VW3A3616": 1 },
-            { "RLW-04P803": 1 },
             { "GV2P14": 1 },
             { "2006-1201": 3 },
             { "2006-1207": 1 },
@@ -219,7 +214,7 @@
     },
     {
         "id": "breaker5hp",
-        "description": "5HP Breaker Only - check",
+        "description": "5HP Breaker - chk",
         "parts": [
             { "GV2P16": 1 },
             { "2006-1201": 3 },
@@ -231,7 +226,7 @@
     },
     {
         "id": "breaker7hp",
-        "description": "7.5HP Breaker Only - check",
+        "description": "7.5HP Breaker - chk",
         "parts": [
             { "GV2P20": 1 },
             { "2006-1201": 3 },
@@ -243,7 +238,7 @@
     },
     {
         "id": "breaker10hp",
-        "description": "10HP Breaker Only -check",
+        "description": "10HP Breaker -chk",
         "parts": [
             { "GV2P22": 1 },
             { "2006-1201": 3 },
@@ -255,7 +250,7 @@
     },
     {
         "id": "breaker15hp",
-        "description": "15HP Breaker Only -check",
+        "description": "15HP Breaker -chk",
         "parts": [
             { "GV3P40": 1 },
             { "2010-1201": 3 },
@@ -267,7 +262,7 @@
     },
     {
         "id": "breaker20hp",
-        "description": "20HP Breaker Only -check",
+        "description": "20HP Breaker -chk",
         "parts": [
             { "GV3P40": 1 },
             { "2016-1201": 3 },
@@ -279,7 +274,7 @@
     },
     {
         "id": "breaker30hp",
-        "description": "30HP Breaker Only -check",
+        "description": "30HP Breaker -chk",
         "parts": [
             { "GV3P50": 1 },
             { "2016-1201": 3 },

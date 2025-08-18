@@ -32,11 +32,22 @@ function Totals() {
     const selectedStcArr = partsData.filter((part) => part.id === options.stc);
     const selectedStc = selectedStcArr[0];
 
-    // Retrieve labor "part" based on selected size
+    // Retrieve labor "part" based on selected size or options input
     const selectedLaborArr = partsData.filter(
         (part) => part.id === `labor-${options.size}`
     );
     const selectedSize = selectedLaborArr[0];
+    const updatedLabor = Number(options.labor) || selectedSize.price || 0;
+
+    // Update baseAssembly price if labor has been edited in options form
+    if (
+        options.labor &&
+        selectedSize.price &&
+        options.labor != selectedSize.price
+    ) {
+        baseAssemblyPrice -= selectedSize.price | 0;
+        baseAssemblyPrice += Number(options.labor);
+    }
 
     // Retrieve install "part"
     const installArr = partsData.filter((part) => part.id === "labor-install");
@@ -62,7 +73,7 @@ function Totals() {
                     <li>
                         {options.stc}: ${selectedStc?.price.toFixed(2)}
                     </li>
-                    <li>Labor: ${selectedSize?.price.toFixed(2)}</li>
+                    <li>Labor: ${updatedLabor.toFixed(2)}</li>
                     <li>Install: ${install?.price.toFixed(2)}</li>
                 </ul>
 

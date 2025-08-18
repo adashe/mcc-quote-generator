@@ -10,6 +10,11 @@ import LinkButton from "../components/buttons/LinkButton";
 function SmccOptions() {
     const { options, handleChangeOptions } = useSmcc();
 
+    // Select all chars in number input field when clicked
+    function handleSelect(e) {
+        e.target.select();
+    }
+
     return (
         <PageNarrow>
             <TabNavigation>
@@ -56,6 +61,19 @@ function SmccOptions() {
                             <option value="STC-112">112</option>
                             <option value="STC-128">128</option>
                         </select>
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        Labor:
+                        <input
+                            type="number"
+                            name="labor"
+                            value={Number(options.labor) || 0}
+                            onChange={handleChangeOptions}
+                            onFocus={handleSelect}
+                        />
                     </label>
                 </div>
             </form>

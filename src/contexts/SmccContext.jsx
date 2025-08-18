@@ -93,6 +93,19 @@ function SmccProvider({ children }) {
                 ["spareShippedLoose"]: 1,
                 [value]: 1,
             }));
+
+            // Retrieve labor "part" based on selected size
+            const selectedLaborArr = partsData.filter(
+                (part) => part.id === `labor-${value}`
+            );
+            const selectedLabor = selectedLaborArr[0];
+            console.log(selectedLabor.price);
+
+            // Set labor option value to the price of the selected size
+            setOptions((previous) => ({
+                ...previous,
+                ["labor"]: selectedLabor.price,
+            }));
         } else if (name === "stc") {
             setBaseAssembly((previous) => ({
                 ...previous,
