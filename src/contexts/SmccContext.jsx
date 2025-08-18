@@ -107,13 +107,13 @@ function SmccProvider({ children }) {
         } else if (name === "stc") {
             setBaseAssembly((previous) => ({
                 ...previous,
-                ["stc32"]: 0,
-                ["stc48"]: 0,
-                ["stc64"]: 0,
-                ["stc80"]: 0,
-                ["stc96"]: 0,
-                ["stc112"]: 0,
-                ["stc128"]: 0,
+                ["STC-32"]: 0,
+                ["STC-48"]: 0,
+                ["STC-64"]: 0,
+                ["STC-80"]: 0,
+                ["STC-96"]: 0,
+                ["STC-112"]: 0,
+                ["STC-128"]: 0,
                 ["spareShippedLoose"]: 1,
                 [value]: 1,
             }));

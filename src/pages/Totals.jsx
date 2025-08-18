@@ -29,14 +29,10 @@ function Totals() {
     }
 
     // Calculate total price of spare and shipped loose kit
-    // Calculate total price of baseAssembly object
-    let spareShippedLoosePrice = calcKitPrice("spareShippedLoose") || 0;
+    const spareShippedLoosePrice = calcKitPrice("spareShippedLoose") || 0;
 
-    // for (const kitID in baseAssembly) {
-    //     const quantity = baseAssembly[kitID];
-    //     const kitPrice = calcKitPrice(kitID);
-    //     baseAssemblyPrice += kitPrice * quantity;
-    // }
+    // Calculate total price of all non variable parts
+    let nonVariablePrice = calcKitPrice(`${options.size}`) || 0;
 
     // Retrieve STC cost
     const selectedStc = partsData.filter((part) => part.id === options.stc)[0];
@@ -47,7 +43,7 @@ function Totals() {
     )[0];
     const updatedLabor = Number(options.labor) || selectedSizeLabor?.price || 0;
 
-    // Update baseAssembly price if labor has been edited in options form
+    // Update baseAssembly price and non variable kit price if labor has been edited in options form
     if (
         options.labor &&
         selectedSizeLabor.price &&
@@ -55,6 +51,9 @@ function Totals() {
     ) {
         baseAssemblyPrice -= selectedSizeLabor.price | 0;
         baseAssemblyPrice += Number(options.labor);
+
+        nonVariablePrice -= selectedSizeLabor.price | 0;
+        nonVariablePrice += Number(options.labor);
     }
 
     // Retrieve install "part"
@@ -86,43 +85,70 @@ function Totals() {
 
                 <XlsxButton />
             </TabNavigation>
-            <h2>Totals</h2>
+            <h2>TOTALS</h2>
             <ul className={styles.totalsUl}>
-                <li>SMCC Price: ${assemblyPrice?.toFixed(2)}</li>
-                <li>Base Assembly Price: ${baseAssemblyPrice?.toFixed(2)}</li>
-                <ul>
-                    Includes:
+                <li>
+                    <div className={styles.totalsLabel}>
+                        Variable Parts (SMCC)
+                    </div>
+                    <div>${assemblyPrice?.toFixed(2)}</div>
+                </li>
+                <li>
+                    <div className={styles.totalsLabel}>
+                        {options.stc || "STC"}
+                    </div>
+                    <div>${selectedStc?.price.toFixed(2) || "0.00"}</div>
+                </li>
+                <li>
+                    <div className={styles.totalsLabel}>
+                        Spare and Shipped Loose
+                    </div>
+                    <div>${spareShippedLoosePrice.toFixed(2) || "0.00"}</div>
+                </li>
+                <li>
+                    <div className={styles.totalsLabel}>Non Variable Parts</div>
+                    <div>${nonVariablePrice.toFixed(2) || "0.00"}</div>
+                </li>
+
+                <ul className={styles.totalsUl}>
                     <li>
-                        {options.stc || "STC"}: $
-                        {selectedStc?.price.toFixed(2) || "0.00"}
+                        <div className={styles.totalsLabel}>Labor</div>
+                        <div>${updatedLabor.toFixed(2) || "0.00"}</div>
                     </li>
-                    <li>Labor: ${updatedLabor.toFixed(2) || "0.00"}</li>
                     <li>
-                        Install Labor: ${install?.price.toFixed(2) || "0.00"}
-                    </li>
-                    <li>Freight: ${freight?.price.toFixed(2) || "0.00"}</li>
-                    <li>
-                        Consumables: ${totalConsumables?.toFixed(2) || "0.00"}
+                        <div className={styles.totalsLabel}>Install Labor</div>
+                        <div>${install?.price.toFixed(2) || "0.00"}</div>
                     </li>
                     <li>
-                        Spare and Shipped Loose: $
-                        {spareShippedLoosePrice.toFixed(2) || "0.00"}
+                        <div className={styles.totalsLabel}>Freight</div>
+                        <div>${freight?.price.toFixed(2) || "0.00"}</div>
                     </li>
                     <li>
-                        Base Components: $
-                        {(
-                            baseAssemblyPrice -
-                                selectedStc?.price -
-                                updatedLabor -
-                                install?.price -
-                                freight?.price -
-                                totalConsumables || 0 - spareShippedLoosePrice
-                        ).toFixed(2) || "0.00"}
+                        <div className={styles.totalsLabel}>Consumables</div>
+                        <div>${totalConsumables?.toFixed(2) || "0.00"}</div>
+                    </li>
+
+                    <li>
+                        <div className={styles.totalsLabel}>
+                            Non Variable Components
+                        </div>
+                        <div>
+                            $
+                            {(
+                                nonVariablePrice -
+                                    updatedLabor -
+                                    install?.price -
+                                    freight?.price -
+                                    totalConsumables || 0
+                            ).toFixed(2) || "0.00"}
+                        </div>
                     </li>
                 </ul>
-
-                <li>
-                    Total: ${(assemblyPrice + baseAssemblyPrice).toFixed(2)}
+                <li className={styles.total}>
+                    <span>TOTAL PRICE</span>
+                    <span>
+                        ${(assemblyPrice + baseAssemblyPrice).toFixed(2)}
+                    </span>
                 </li>
             </ul>
         </PageWide>
