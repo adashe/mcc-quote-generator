@@ -44,7 +44,10 @@ export function KitRow({ kit }) {
             </div>
 
             <div className={styles.column}>
-                ${calcKitPrice(kit.id).toFixed(2)}
+                {calcKitPrice(kit.id).toLocaleString("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                })}
             </div>
         </div>
     );

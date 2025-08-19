@@ -58,7 +58,24 @@ export function XlsxButton() {
                 (part) => partsList[part.id] > 0
             );
 
-            selectedPartsArr.map((part, i) => {
+            // Sort parts array by manufacturer name
+            const sortedSelectedPartsArr = selectedPartsArr
+                .slice()
+                .sort((a, b) => {
+                    const nameA = a.manufacturer.toUpperCase(); // ignore upper and lowercase
+                    const nameB = b.manufacturer.toUpperCase(); // ignore upper and lowercase
+                    if (nameA < nameB) {
+                        return -1;
+                    }
+                    if (nameA > nameB) {
+                        return 1;
+                    }
+
+                    // names must be equal
+                    return 0;
+                });
+
+            sortedSelectedPartsArr.map((part, i) => {
                 const row = {
                     ID: i + 1,
                     "Main ID": 1,

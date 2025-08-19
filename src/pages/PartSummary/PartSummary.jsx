@@ -50,6 +50,21 @@ function PartSummary() {
     // Use the partsList object to filter the partsData array
     const selectedPartsArr = partsData.filter((part) => partsList[part.id] > 0);
 
+    // Sort parts array by manufacturer name
+    const sortedSelectedPartsArr = selectedPartsArr.slice().sort((a, b) => {
+        const nameA = a.manufacturer.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.manufacturer.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+
+        // names must be equal
+        return 0;
+    });
+
     return (
         <PageWide>
             <TabNavigation>
@@ -69,7 +84,7 @@ function PartSummary() {
                     <div className={styles.currencyCol}>Price</div>
                     <div className={styles.currencyCol}>Total</div>
                 </div>
-                {selectedPartsArr.map((part) => (
+                {sortedSelectedPartsArr.map((part) => (
                     <PartsListRow
                         part={part}
                         partsList={partsList}

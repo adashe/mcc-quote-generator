@@ -79,15 +79,20 @@ function OptionsForm() {
                     <label>
                         Labor:
                         <input
-                            type="number"
+                            type="text"
                             name="labor"
                             value={
-                                Number(options.labor).toFixed(2) ||
-                                (0.0).toFixed(2)
+                                options?.labor?.toLocaleString("en-US", {
+                                    style: "currency",
+                                    currency: "USD",
+                                }) ||
+                                (0).toLocaleString("en-US", {
+                                    style: "currency",
+                                    currency: "USD",
+                                })
                             }
                             onChange={handleChangeOptions}
                             onFocus={handleSelect}
-                            placeholder={(0.0).toFixed(2)}
                         />
                     </label>
                 </div>
