@@ -1,11 +1,13 @@
-import PageWide from "../../components/PageWide";
 import { useSmcc } from "../../contexts/SmccContext";
-import { PartsListRow } from "./PartsListRow";
 import styles from "./PartsListRow.module.css";
-import Button from "../../components/buttons/Button";
+
+import PageWide from "../../components/PageWide";
 import TabNavigation from "../../components/TabNavigation";
+import Button from "../../components/buttons/Button";
 import LinkButton from "../../components/buttons/LinkButton";
 import { XlsxButton } from "../../components/buttons/XlsxButton";
+
+import { PartsListRow } from "./PartsListRow";
 
 function PartSummary() {
     const { kitsData, optionsData, partsData, assembly, baseAssembly } =
@@ -51,7 +53,7 @@ function PartSummary() {
     return (
         <PageWide>
             <TabNavigation>
-                <LinkButton route={"/smcc"}>Edit Inputs</LinkButton>
+                <LinkButton route={"/assemblyForm"}>Edit Inputs</LinkButton>
                 <LinkButton route={"/kitSummary"}>Kit Summary</LinkButton>
                 <Button isActive={false}>Part Summary</Button>
                 <LinkButton route={"/totals"}>Totals</LinkButton>

@@ -1,7 +1,8 @@
-import styles from "./KitSummaryRow.module.css";
-import { useSmcc } from "../../contexts/SmccContext";
-import KitSummaryPartsList from "./KitSummaryPartsList";
 import { useState } from "react";
+import { useSmcc } from "../../contexts/SmccContext";
+import styles from "./KitSummaryRow.module.css";
+
+import KitSummaryPartsList from "./KitSummaryPartsList";
 
 function KitSummaryRow({ kit }) {
     const { assembly, baseAssembly, calcKitPrice } = useSmcc();

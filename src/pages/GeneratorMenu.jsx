@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
-
-import Button from "../components/buttons/Button";
 import PageNarrow from "../components/PageNarrow";
+import { Link } from "react-router-dom";
+import Button from "../components/buttons/Button";
 
 function GeneratorMenu() {
     return (

@@ -1,9 +1,6 @@
-import { Link } from "react-router-dom";
-
-import Button from "../components/buttons/Button";
-import PageNarrow from "../components/PageNarrow";
-
 import { useSmcc } from "../contexts/SmccContext";
+
+import PageNarrow from "../components/PageNarrow";
 import TabNavigation from "../components/TabNavigation";
 import LinkButton from "../components/buttons/LinkButton";
 
@@ -18,7 +15,7 @@ function SmccOptions() {
     return (
         <PageNarrow>
             <TabNavigation>
-                <LinkButton route={"/smcc"}>&larr; KITS</LinkButton>
+                <LinkButton route={"/assemblyForm"}>&larr; KITS</LinkButton>
                 <LinkButton route={"/kitSummary"}>SUBMIT &rarr;</LinkButton>
             </TabNavigation>
             <h2>SMCC OPTIONS</h2>

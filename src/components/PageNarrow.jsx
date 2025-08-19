@@ -1,4 +1,5 @@
 import styles from "./PageNarrow.module.css";
+
 import { Header } from "./Header";
 
 function PageNarrow({ children }) {

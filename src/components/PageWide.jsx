@@ -1,4 +1,5 @@
 import styles from "./PageWide.module.css";
+
 import { Header } from "./Header";
 
 function PageWide({ children }) {

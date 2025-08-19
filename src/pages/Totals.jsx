@@ -1,9 +1,10 @@
+import { useSmcc } from "../contexts/SmccContext";
+import styles from "./Totals.module.css";
+
+import PageWide from "../components/PageWide";
 import TabNavigation from "../components/TabNavigation";
 import Button from "../components/buttons/Button";
 import LinkButton from "../components/buttons/LinkButton";
-import PageWide from "../components/PageWide";
-import { useSmcc } from "../contexts/SmccContext";
-import styles from "./Totals.module.css";
 import { XlsxButton } from "../components/buttons/XlsxButton";
 
 function Totals() {
@@ -77,7 +78,7 @@ function Totals() {
     return (
         <PageWide>
             <TabNavigation>
-                <LinkButton route={"/smcc"}>Edit Inputs</LinkButton>
+                <LinkButton route={"/assemblyForm"}>Edit Inputs</LinkButton>
                 <LinkButton route={"/kitSummary"}>Kit Summary</LinkButton>
 
                 <LinkButton route={"/partSummary"}>Part Summary</LinkButton>

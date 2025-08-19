@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
-
-import BackButton from "../components/buttons/BackButton";
-import Button from "../components/buttons/Button";
-import PageNarrow from "../components/PageNarrow";
-
 import { useSmcc } from "../contexts/SmccContext";
+
+import PageNarrow from "../components/PageNarrow";
+import Button from "../components/buttons/Button";
+import { Link } from "react-router-dom";
+import BackButton from "../components/buttons/BackButton";
 
 function ProjectInfo() {
     const { projectInfo, handleChangeProjectInfo } = useSmcc();

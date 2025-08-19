@@ -1,4 +1,4 @@
-import { useSmcc } from "../contexts/SmccContext";
+import { useSmcc } from "../../contexts/SmccContext";
 import styles from "./KitsForm.module.css";
 
 // Select the entire value when user clicks in the input box (for easier editing)

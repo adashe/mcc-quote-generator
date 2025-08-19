@@ -22,7 +22,7 @@ function KitSummary() {
     return (
         <PageWide>
             <TabNavigation>
-                <LinkButton route={"/smcc"}>Edit Inputs</LinkButton>
+                <LinkButton route={"/assemblyForm"}>Edit Inputs</LinkButton>
                 <Button isActive={false}>Kit Summary</Button>
                 <LinkButton route={"/partSummary"}>Part Summary</LinkButton>
                 <LinkButton route={"/totals"}>Totals</LinkButton>

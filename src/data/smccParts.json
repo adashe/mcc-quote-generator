@@ -1425,9 +1425,9 @@
     },
     {
         "id": "2006-1202",
-        "description": "Unknown",
-        "manufacturer": "Unknown",
-        "price": 0,
+        "description": "TB, Pass-tru, spring,6mm2, 1-1 Orange",
+        "manufacturer": "Jo-Kell, Inc",
+        "price": 1.61,
         "mm": 0,
         "category": "misc"
     },
@@ -1441,57 +1441,49 @@
     },
     {
         "id": "2203 228 REV.E",
-        "description": "Unknown",
-        "manufacturer": "Unknown",
-        "price": 0,
+        "description": "Satie - Medium SMCC with bus-UPDATED",
+        "manufacturer": "Satie North America Inc",
+        "price": 1241.0,
         "mm": 0,
         "category": "misc"
     },
     {
         "id": "2006-404",
-        "description": "Unknown",
-        "manufacturer": "Unknown",
-        "price": 0,
-        "mm": 0,
-        "category": "misc"
-    },
-    {
-        "id": "2006-407",
-        "description": "Unknown",
-        "manufacturer": "Unknown",
-        "price": 0,
+        "description": "4-WAY JUMPER",
+        "manufacturer": "Wago",
+        "price": 1.77,
         "mm": 0,
         "category": "misc"
     },
     {
         "id": "2002-407",
-        "description": "Unknown",
-        "manufacturer": "Unknown",
-        "price": 0,
+        "description": "Jumper Bar,7-Pole,Push-in,Lt Gray, 5.2mm",
+        "manufacturer": "Wago",
+        "price": 1.42,
         "mm": 0,
         "category": "misc"
     },
     {
         "id": "32463",
-        "description": "Unknown",
-        "manufacturer": "Unknown",
-        "price": 0,
+        "description": "63A Shoe Bussbar",
+        "manufacturer": "Woehner",
+        "price": 57.46,
         "mm": 0,
         "category": "misc"
     },
     {
         "id": "AZ576-1C-24DE",
-        "description": "Unknown",
-        "manufacturer": "Unknown",
-        "price": 0,
+        "description": "RELAY GEN PURPOSE SPDT 20A 24V",
+        "manufacturer": "Digikey",
+        "price": 2.1526,
         "mm": 0,
         "category": "misc"
     },
     {
         "id": "SDSA4040D",
-        "description": "Unknown",
-        "manufacturer": "Unknown",
-        "price": 0,
+        "description": "Surge Protective Device, 480V, Delta",
+        "manufacturer": "Graybar Electric",
+        "price": 72.46,
         "mm": 0,
         "category": "misc"
     },
