@@ -19,3 +19,6 @@ div.partNumCol {
 div.partDescCol {
     width: 300px;
 }
+div.currencyCol {
+    text-align: right;
+}

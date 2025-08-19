@@ -189,22 +189,10 @@
         "fla": null
     },
     {
-        "id": "breaker1hp",
-        "description": "1 and 1.5HP Breaker -chk",
-        "parts": [
-            { "GV2P10": 1 },
-            { "2006-1201": 3 },
-            { "2006-1207": 1 },
-            { "2006-1292": 1 }
-        ],
-        "price": 1,
-        "fla": null
-    },
-    {
         "id": "breaker3hp",
-        "description": "2 and 3HP Breaker -chk",
+        "description": "1, 2, and 3HP Breaker",
         "parts": [
-            { "GV2P14": 1 },
+            { "3RV2711-1JD10": 1 },
             { "2006-1201": 3 },
             { "2006-1207": 1 },
             { "2006-1292": 1 }
@@ -214,9 +202,9 @@
     },
     {
         "id": "breaker5hp",
-        "description": "5HP Breaker - chk",
+        "description": "5HP Breaker",
         "parts": [
-            { "GV2P16": 1 },
+            { "3RV2721-4CD10": 1 },
             { "2006-1201": 3 },
             { "2006-1207": 1 },
             { "2006-1292": 1 }
@@ -226,9 +214,9 @@
     },
     {
         "id": "breaker7hp",
-        "description": "7.5HP Breaker - chk",
+        "description": "7.5HP Breaker",
         "parts": [
-            { "GV2P20": 1 },
+            { "3RV2721-4CD10": 1 },
             { "2006-1201": 3 },
             { "2006-1207": 1 },
             { "2006-1292": 1 }
@@ -238,21 +226,9 @@
     },
     {
         "id": "breaker10hp",
-        "description": "10HP Breaker -chk",
+        "description": "10HP Breaker",
         "parts": [
-            { "GV2P22": 1 },
-            { "2006-1201": 3 },
-            { "2006-1207": 1 },
-            { "2006-1292": 1 }
-        ],
-        "price": 1,
-        "fla": null
-    },
-    {
-        "id": "breaker15hp",
-        "description": "15HP Breaker -chk",
-        "parts": [
-            { "GV3P40": 1 },
+            { "3RV2721-4CD10": 1 },
             { "2010-1201": 3 },
             { "2010-1207": 1 },
             { "2010-1292": 1 }
@@ -261,10 +237,22 @@
         "fla": null
     },
     {
-        "id": "breaker20hp",
-        "description": "20HP Breaker -chk",
+        "id": "breaker15hp",
+        "description": "15HP Breaker",
         "parts": [
-            { "GV3P40": 1 },
+            { "3RV2742-5FD10": 1 },
+            { "2010-1201": 3 },
+            { "2010-1207": 1 },
+            { "2010-1292": 1 }
+        ],
+        "price": 1,
+        "fla": null
+    },
+    {
+        "id": "breaker25hp",
+        "description": "20 and 25HP Breaker",
+        "parts": [
+            { "3RV2742-5LD10": 1 },
             { "2016-1201": 3 },
             { "2016-1207": 1 },
             { "2016-1292": 1 }
@@ -274,9 +262,9 @@
     },
     {
         "id": "breaker30hp",
-        "description": "30HP Breaker -chk",
+        "description": "30HP Breaker",
         "parts": [
-            { "GV3P50": 1 },
+            { "3RV2742-5LD10": 1 },
             { "2016-1201": 3 },
             { "2016-1207": 1 },
             { "2016-1292": 1 }

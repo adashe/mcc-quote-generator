@@ -32,7 +32,7 @@ function AssemblyForm() {
         <PageNarrow>
             <TabNavigation>
                 <RestartButton />
-                <LinkButton route={"/smccOptions"}>Options &rarr;</LinkButton>
+                <LinkButton route={"/optionsForm"}>Options &rarr;</LinkButton>
             </TabNavigation>
             <h2>SMCC KITS</h2>
             <form onSubmit={handleSubmit}>

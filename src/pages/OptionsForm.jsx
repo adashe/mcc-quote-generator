@@ -4,7 +4,7 @@ import PageNarrow from "../components/PageNarrow";
 import TabNavigation from "../components/TabNavigation";
 import LinkButton from "../components/buttons/LinkButton";
 
-function SmccOptions() {
+function OptionsForm() {
     const { options, handleChangeOptions } = useSmcc();
 
     // Select all chars in number input field when clicked
@@ -29,6 +29,7 @@ function SmccOptions() {
                             value={options.jobNum || ""}
                             onChange={handleChangeOptions}
                             onFocus={handleSelect}
+                            placeholder="..."
                         />
                     </label>
                 </div>
@@ -80,9 +81,13 @@ function SmccOptions() {
                         <input
                             type="number"
                             name="labor"
-                            value={Number(options.labor).toFixed(2) || 0}
+                            value={
+                                Number(options.labor).toFixed(2) ||
+                                (0.0).toFixed(2)
+                            }
                             onChange={handleChangeOptions}
                             onFocus={handleSelect}
+                            placeholder={(0.0).toFixed(2)}
                         />
                     </label>
                 </div>
@@ -91,4 +96,4 @@ function SmccOptions() {
     );
 }
 
-export default SmccOptions;
+export default OptionsForm;

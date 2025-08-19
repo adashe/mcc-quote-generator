@@ -65,9 +65,9 @@ function PartSummary() {
                     <div className={styles.qtyCol}>Qty</div>
                     <div className={styles.partNumCol}>Part Num</div>
                     <div className={styles.partDescCol}>Description</div>
-                    <div>Manufacturer</div>
-                    <div>Price</div>
-                    <div>Total</div>
+                    <div>Manufact.</div>
+                    <div className={styles.currencyCol}>Price</div>
+                    <div className={styles.currencyCol}>Total</div>
                 </div>
                 {selectedPartsArr.map((part) => (
                     <PartsListRow

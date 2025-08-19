@@ -92,41 +92,109 @@ function Totals() {
                     <div className={styles.totalsLabel}>
                         Variable Parts (SMCC)
                     </div>
-                    <div>${assemblyPrice?.toFixed(2)}</div>
+                    <div>
+                        {assemblyPrice?.toLocaleString("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                        })}
+                    </div>
                 </li>
                 <li>
                     <div className={styles.totalsLabel}>
                         {options.stc || "STC"}
                     </div>
-                    <div>${selectedStc?.price.toFixed(2) || "0.00"}</div>
+                    <div>
+                        {selectedStc?.price.toLocaleString("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                        }) ||
+                            (0).toLocaleString("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                            })}
+                    </div>
                 </li>
                 <li>
                     <div className={styles.totalsLabel}>
                         Spare and Shipped Loose
                     </div>
-                    <div>${spareShippedLoosePrice.toFixed(2) || "0.00"}</div>
+                    <div>
+                        {spareShippedLoosePrice.toLocaleString("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                        }) ||
+                            (0).toLocaleString("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                            })}
+                    </div>
                 </li>
                 <li>
                     <div className={styles.totalsLabel}>Non Variable Parts</div>
-                    <div>${nonVariablePrice.toFixed(2) || "0.00"}</div>
+                    <div>
+                        {nonVariablePrice.toLocaleString("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                        }) ||
+                            (0).toLocaleString("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                            })}
+                    </div>
                 </li>
 
                 <ul className={styles.totalsUl}>
                     <li>
                         <div className={styles.totalsLabel}>Labor</div>
-                        <div>${updatedLabor.toFixed(2) || "0.00"}</div>
+                        <div>
+                            {updatedLabor.toLocaleString("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                            }) ||
+                                (0).toLocaleString("en-US", {
+                                    style: "currency",
+                                    currency: "USD",
+                                })}
+                        </div>
                     </li>
                     <li>
                         <div className={styles.totalsLabel}>Install Labor</div>
-                        <div>${install?.price.toFixed(2) || "0.00"}</div>
+                        <div>
+                            {install?.price.toLocaleString("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                            }) ||
+                                (0).toLocaleString("en-US", {
+                                    style: "currency",
+                                    currency: "USD",
+                                })}
+                        </div>
                     </li>
                     <li>
                         <div className={styles.totalsLabel}>Freight</div>
-                        <div>${freight?.price.toFixed(2) || "0.00"}</div>
+                        <div>
+                            {freight?.price.toLocaleString("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                            }) ||
+                                (0).toLocaleString("en-US", {
+                                    style: "currency",
+                                    currency: "USD",
+                                })}
+                        </div>
                     </li>
                     <li>
                         <div className={styles.totalsLabel}>Consumables</div>
-                        <div>${totalConsumables?.toFixed(2) || "0.00"}</div>
+                        <div>
+                            {totalConsumables?.toLocaleString("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                            }) ||
+                                (0).toLocaleString("en-US", {
+                                    style: "currency",
+                                    currency: "USD",
+                                })}
+                        </div>
                     </li>
 
                     <li>
@@ -134,21 +202,33 @@ function Totals() {
                             Non Variable Components
                         </div>
                         <div>
-                            $
                             {(
                                 nonVariablePrice -
                                     updatedLabor -
                                     install?.price -
                                     freight?.price -
                                     totalConsumables || 0
-                            ).toFixed(2) || "0.00"}
+                            ).toLocaleString("en-US", {
+                                style: "currency",
+                                currency: "USD",
+                            }) ||
+                                (0).toLocaleString("en-US", {
+                                    style: "currency",
+                                    currency: "USD",
+                                })}
                         </div>
                     </li>
                 </ul>
                 <li className={styles.total}>
                     <span>TOTAL PRICE</span>
                     <span>
-                        ${(assemblyPrice + baseAssemblyPrice).toFixed(2)}
+                        {(assemblyPrice + baseAssemblyPrice).toLocaleString(
+                            "en-US",
+                            {
+                                style: "currency",
+                                currency: "USD",
+                            }
+                        )}
                     </span>
                 </li>
             </ul>

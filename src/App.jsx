@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SmccProvider } from "./contexts/SmccContext";
 
 import AssemblyForm from "./pages/AssemblyForm/AssemblyForm";
-import SmccOptions from "./pages/SmccOptions";
+import OptionsForm from "./pages/OptionsForm";
 import ProjectInfo from "./pages/ProjectInfo";
 import KitSummary from "./pages/KitSummary/KitSummary";
 import PartSummary from "./pages/PartSummary/PartSummary";
@@ -17,7 +17,7 @@ function App() {
                         <Route index element={<AssemblyForm />} />
 
                         <Route path="assemblyForm" element={<AssemblyForm />} />
-                        <Route path="smccOptions" element={<SmccOptions />} />
+                        <Route path="optionsForm" element={<OptionsForm />} />
                         <Route path="projectInfo" element={<ProjectInfo />} />
                         <Route path="kitSummary" element={<KitSummary />} />
                         <Route path="partSummary" element={<PartSummary />} />

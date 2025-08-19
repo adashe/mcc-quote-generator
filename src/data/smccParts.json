@@ -1491,7 +1491,7 @@
         "id": "labor-small",
         "description": "Labor - Small",
         "manufacturer": "Sun Coast",
-        "price": 0,
+        "price": 1.0,
         "mm": 0,
         "category": "labor"
     },
@@ -1515,7 +1515,7 @@
         "id": "labor-xlarge",
         "description": "Labor - Extra Large",
         "manufacturer": "Sun Coast",
-        "price": 0,
+        "price": 1.0,
         "mm": 0,
         "category": "labor"
     },

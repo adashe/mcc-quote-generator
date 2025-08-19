@@ -7,8 +7,18 @@ export function PartsListRow({ part, partsList }) {
             <div className={styles.partNumCol}>{part.id}</div>
             <div className={styles.partDescCol}>{part.description}</div>
             <div>{part.manufacturer}</div>
-            <div>${part.price.toFixed(2)}</div>
-            <div>${(part.price * partsList[part.id]).toFixed(2)}</div>
+            <div className={styles.currencyCol}>
+                {part.price.toLocaleString("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                })}
+            </div>
+            <div className={styles.currencyCol}>
+                {(part.price * partsList[part.id]).toLocaleString("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                })}
+            </div>
         </li>
     );
 }

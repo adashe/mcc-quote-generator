@@ -9,9 +9,28 @@ function KitSummaryPartsListItem({ part, quantity, kitQuantity }) {
                 {part?.description || "Item not found in parts database"}
             </div>
             <div>{part?.manufacturer}</div>
-            <div>${part?.price.toFixed(2) || 0.0}</div>
-            <div>
-                ${(part?.price * quantity * kitQuantity).toFixed(2) || 0.0}
+            <div className={styles.currencyCol}>
+                {part?.price.toLocaleString("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                }) ||
+                    (0.0).toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                    })}
+            </div>
+            <div className={styles.currencyCol}>
+                {(part?.price * quantity * kitQuantity).toLocaleString(
+                    "en-US",
+                    {
+                        style: "currency",
+                        currency: "USD",
+                    }
+                ) ||
+                    (0.0).toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                    })}
             </div>
         </li>
     );

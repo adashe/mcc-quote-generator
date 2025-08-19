@@ -23,10 +23,18 @@ function KitSummaryRow({ kit }) {
                 </div>
 
                 <div className={styles.kitCol}>
-                    Price: ${calcKitPrice(kit.id).toFixed(2)}
+                    Price:{" "}
+                    {calcKitPrice(kit.id).toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                    })}
                 </div>
                 <div className={styles.kitCol}>
-                    Total: ${(calcKitPrice(kit.id) * quantity).toFixed(2)}
+                    Total:{" "}
+                    {(calcKitPrice(kit.id) * quantity).toLocaleString("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                    })}
                 </div>
 
                 {isOpen ? (

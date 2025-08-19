@@ -26,8 +26,8 @@ function KitSummaryPartsList({ parts, kitQuantity }) {
                 <div className={styles.partNumCol}>PART NUM</div>
                 <div className={styles.partDescCol}>DESCRIPTION</div>
                 <div>MANUFACTURER</div>
-                <div>PRICE</div>
-                <div>TOTAL</div>
+                <div className={styles.currencyCol}>PRICE</div>
+                <div className={styles.currencyCol}>TOTAL</div>
             </li>
             {selectedPartsArr.map((part, i) => (
                 <KitSummaryPartsListItem
