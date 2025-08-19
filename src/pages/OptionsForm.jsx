@@ -74,28 +74,6 @@ function OptionsForm() {
                         </select>
                     </label>
                 </div>
-
-                <div>
-                    <label>
-                        Labor:
-                        <input
-                            type="text"
-                            name="labor"
-                            value={
-                                options?.labor?.toLocaleString("en-US", {
-                                    style: "currency",
-                                    currency: "USD",
-                                }) ||
-                                (0).toLocaleString("en-US", {
-                                    style: "currency",
-                                    currency: "USD",
-                                })
-                            }
-                            onChange={handleChangeOptions}
-                            onFocus={handleSelect}
-                        />
-                    </label>
-                </div>
             </form>
         </PageNarrow>
     );

@@ -4,9 +4,9 @@
         "description": "Non Variable Parts - Small",
         "parts": [
             { "labor-small": 1 },
+            { "labor-install": 1 },
             { "consumables-small": 1 },
             { "consumables-misc": 1 },
-            { "labor-install": 1 },
             { "freight": 1 }
         ],
         "price": 1,
@@ -17,9 +17,9 @@
         "description": "Non Variable Parts - Medium",
         "parts": [
             { "labor-medium": 1 },
+            { "labor-install": 1 },
             { "consumables-medium": 1 },
             { "consumables-misc": 1 },
-            { "labor-install": 1 },
             { "freight": 1 },
             { "01245": 2 },
             { "01358": 4 },
@@ -123,9 +123,9 @@
         "description": "Non Variable Parts - Large",
         "parts": [
             { "labor-large": 1 },
+            { "labor-install": 1 },
             { "consumables-large": 1 },
             { "consumables-misc": 1 },
-            { "labor-install": 1 },
             { "freight": 1 },
             { "01245": 2 },
             { "01358": 4 },
@@ -233,9 +233,9 @@
         "description": "Non Variable Parts - Extra Large",
         "parts": [
             { "labor-xlarge": 1 },
+            { "labor-install": 1 },
             { "consumables-xlarge": 1 },
             { "consumables-misc": 1 },
-            { "labor-install": 1 },
             { "freight": 1 }
         ],
         "price": 1,

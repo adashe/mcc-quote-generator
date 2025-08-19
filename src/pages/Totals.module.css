@@ -2,7 +2,9 @@
     list-style: none;
     text-align: left;
     margin: 0px auto;
+    color: teal;
 }
+
 .totalsUl li {
     display: flex;
     justify-content: space-between;
@@ -14,8 +16,24 @@
 .totalsLabel {
     width: 280px;
 }
+.totalsSubUl li {
+    font-size: 14px;
+    padding: 4px;
+    margin-right: 20px;
+}
+.totalsSubUl .totalsLabel {
+    width: 200px;
+}
 li.total {
     color: var(--color-dark--0);
     font-size: 18px;
     font-weight: 500;
+}
+.materialSymbolsOutlined {
+    font-family: "Material Symbols Outlined";
+    font-size: 16px;
+    vertical-align: middle;
+}
+.clickable {
+    cursor: pointer;
 }

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSmcc } from "../contexts/SmccContext";
 import styles from "./Totals.module.css";
 
@@ -10,6 +11,11 @@ import { XlsxButton } from "../components/buttons/XlsxButton";
 function Totals() {
     const { partsData, assembly, options, baseAssembly, calcKitPrice } =
         useSmcc();
+    const [isOpen, setIsOpen] = useState(false);
+
+    function handleOpen() {
+        setIsOpen(!isOpen);
+    }
 
     // Calculate total price of assembly object
     let assemblyPrice = 0;
@@ -30,38 +36,30 @@ function Totals() {
     }
 
     // Calculate total price of spare and shipped loose kit
-    const spareShippedLoosePrice = calcKitPrice("spareShippedLoose") || 0;
+    const spareShippedLoosePrice = options.size
+        ? calcKitPrice("spareShippedLoose")
+        : 0;
 
     // Calculate total price of all non variable parts
     let nonVariablePrice = calcKitPrice(`${options.size}`) || 0;
 
-    // Retrieve STC cost
+    // Retrieve STC
     const selectedStc = partsData.filter((part) => part.id === options.stc)[0];
 
-    // Retrieve labor "part" based on selected size or options input
+    // Retrieve selected size labor "part"
     const selectedSizeLabor = partsData.filter(
         (part) => part.id === `labor-${options.size}`
     )[0];
-    const updatedLabor = Number(options.labor) || selectedSizeLabor?.price || 0;
 
-    // Update baseAssembly price and non variable kit price if labor has been edited in options form
-    if (
-        options.labor &&
-        selectedSizeLabor.price &&
-        options.labor != selectedSizeLabor.price
-    ) {
-        baseAssemblyPrice -= selectedSizeLabor.price | 0;
-        baseAssemblyPrice += Number(options.labor);
-
-        nonVariablePrice -= selectedSizeLabor.price | 0;
-        nonVariablePrice += Number(options.labor);
-    }
-
-    // Retrieve install "part"
-    const install = partsData.filter((part) => part.id === "labor-install")[0];
+    // Retrieve install labor "part"
+    const installLabor = partsData.filter(
+        (part) => part.id === "labor-install"
+    )[0];
 
     // Retrieve freight "part"
-    const freight = partsData.filter((part) => part.id === "freight")[0];
+    const freight = options.size
+        ? partsData.filter((part) => part.id === "freight")[0]
+        : 0;
 
     // Retrieve and sum consumables
     const consumablesMisc = partsData.filter(
@@ -129,8 +127,21 @@ function Totals() {
                             })}
                     </div>
                 </li>
-                <li>
-                    <div className={styles.totalsLabel}>Non Variable Parts</div>
+
+                <li onClick={handleOpen} className={styles.clickable}>
+                    <div className={styles.totalsLabel}>
+                        Non Variable Parts{" "}
+                        {isOpen ? (
+                            <span className={styles.materialSymbolsOutlined}>
+                                keyboard_arrow_up
+                            </span>
+                        ) : (
+                            <span className={styles.materialSymbolsOutlined}>
+                                keyboard_arrow_down
+                            </span>
+                        )}
+                    </div>
+
                     <div>
                         {nonVariablePrice.toLocaleString("en-US", {
                             style: "currency",
@@ -143,82 +154,94 @@ function Totals() {
                     </div>
                 </li>
 
-                <ul className={styles.totalsUl}>
-                    <li>
-                        <div className={styles.totalsLabel}>Labor</div>
-                        <div>
-                            {updatedLabor.toLocaleString("en-US", {
-                                style: "currency",
-                                currency: "USD",
-                            }) ||
-                                (0).toLocaleString("en-US", {
+                {isOpen ? (
+                    <ul className={styles.totalsSubUl}>
+                        <li>
+                            <div className={styles.totalsLabel}>
+                                {selectedSizeLabor.description}
+                            </div>
+                            <div>
+                                {selectedSizeLabor?.price.toLocaleString(
+                                    "en-US",
+                                    {
+                                        style: "currency",
+                                        currency: "USD",
+                                    }
+                                ) ||
+                                    (0).toLocaleString("en-US", {
+                                        style: "currency",
+                                        currency: "USD",
+                                    })}
+                            </div>
+                        </li>
+                        <li>
+                            <div className={styles.totalsLabel}>
+                                Labor - Install
+                            </div>
+                            <div>
+                                {installLabor?.price?.toLocaleString("en-US", {
                                     style: "currency",
                                     currency: "USD",
-                                })}
-                        </div>
-                    </li>
-                    <li>
-                        <div className={styles.totalsLabel}>Install Labor</div>
-                        <div>
-                            {install?.price.toLocaleString("en-US", {
-                                style: "currency",
-                                currency: "USD",
-                            }) ||
-                                (0).toLocaleString("en-US", {
+                                }) ||
+                                    (0).toLocaleString("en-US", {
+                                        style: "currency",
+                                        currency: "USD",
+                                    })}
+                            </div>
+                        </li>
+                        <li>
+                            <div className={styles.totalsLabel}>Freight</div>
+                            <div>
+                                {freight?.price?.toLocaleString("en-US", {
                                     style: "currency",
                                     currency: "USD",
-                                })}
-                        </div>
-                    </li>
-                    <li>
-                        <div className={styles.totalsLabel}>Freight</div>
-                        <div>
-                            {freight?.price.toLocaleString("en-US", {
-                                style: "currency",
-                                currency: "USD",
-                            }) ||
-                                (0).toLocaleString("en-US", {
+                                }) ||
+                                    (0).toLocaleString("en-US", {
+                                        style: "currency",
+                                        currency: "USD",
+                                    })}
+                            </div>
+                        </li>
+                        <li>
+                            <div className={styles.totalsLabel}>
+                                Consumables
+                            </div>
+                            <div>
+                                {totalConsumables?.toLocaleString("en-US", {
                                     style: "currency",
                                     currency: "USD",
-                                })}
-                        </div>
-                    </li>
-                    <li>
-                        <div className={styles.totalsLabel}>Consumables</div>
-                        <div>
-                            {totalConsumables?.toLocaleString("en-US", {
-                                style: "currency",
-                                currency: "USD",
-                            }) ||
-                                (0).toLocaleString("en-US", {
-                                    style: "currency",
-                                    currency: "USD",
-                                })}
-                        </div>
-                    </li>
+                                }) ||
+                                    (0).toLocaleString("en-US", {
+                                        style: "currency",
+                                        currency: "USD",
+                                    })}
+                            </div>
+                        </li>
 
-                    <li>
-                        <div className={styles.totalsLabel}>
-                            Non Variable Components
-                        </div>
-                        <div>
-                            {(
-                                nonVariablePrice -
-                                    updatedLabor -
-                                    install?.price -
-                                    freight?.price -
-                                    totalConsumables || 0
-                            ).toLocaleString("en-US", {
-                                style: "currency",
-                                currency: "USD",
-                            }) ||
-                                (0).toLocaleString("en-US", {
+                        <li>
+                            <div className={styles.totalsLabel}>Parts</div>
+                            <div>
+                                {(
+                                    nonVariablePrice -
+                                        installLabor?.price -
+                                        selectedSizeLabor?.price -
+                                        freight?.price -
+                                        totalConsumables || 0
+                                ).toLocaleString("en-US", {
                                     style: "currency",
                                     currency: "USD",
-                                })}
-                        </div>
-                    </li>
-                </ul>
+                                }) ||
+                                    (0).toLocaleString("en-US", {
+                                        style: "currency",
+                                        currency: "USD",
+                                    })}
+                            </div>
+                        </li>
+                    </ul>
+                ) : (
+                    ""
+                )}
+
                 <li className={styles.total}>
                     <span>TOTAL PRICE</span>
                     <span>
